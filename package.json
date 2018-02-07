@@ -2,6 +2,9 @@
   "name": "framework7-template-single-view",
   "version": "1.0.0",
   "description": "Framework7 single view app template",
+  "engines" : {
+    "node" : "6.11.1"
+  }
   "repository": {
     "type": "git",
     "url": "git+https://github.com/framework7io/framework7-template-single-view.git"
