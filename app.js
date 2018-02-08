@@ -14,6 +14,12 @@ var explore = require('./routes/explore');
 var surprise = require('./routes/surprise');
 var profile = require('./routes/profile');
 
+// User Profile Tabs
+var user = require('./routes/user');
+
+// Idea Details Tabs
+var idea = require('./routes/idea');
+
 // Example route
 // var user = require('./routes/user');
 
@@ -49,6 +55,12 @@ app.get('/index', index.view);
 app.get('/explore', explore.view);
 app.get('/surprise', surprise.view);
 app.get('/profile', profile.view);
+
+// User Profile Tabs
+app.get('/user/:name', user.view);
+
+// Idea Details Tabs
+app.get('/idea/:id', idea.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

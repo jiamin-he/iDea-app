@@ -2,24 +2,28 @@
   "updates": [
     {
       "name": "Doug Engelbart",
+      "id": "update1",
       "checked" : "Take a bus or a train to a village or a town you have never visited to.",
       "description": "Today I took a random bus to explore this city! Came across interesting stangers and bought him a cup of coffee. Feeling peaceful!",
       "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/7fa9f75a70fa45c394238d09a8717984.jpeg"
     },
     {
       "name": "Jennifer Miao",
+      "id": "update2",
       "checked" : "Say Hello to someone that you've never said to.",
       "description": "Say hello to a mad neightbor, and gave him a smile. He seemed to calm down and tried smile back to me.",
       "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/8934fbf77e8246798bdef323334fdab6.jpeg"
     },
     {
       "name": "Keiser Batman",
+      "id": "update3",
       "checked" : "Enjoy the scenery near where you live.",
       "description": "Lying on the lawn !!! Sunshine!!!",
       "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/9ea7e9cbd1ef40d1ac8c9b44fd2fe220.jpeg"
     },
     {
       "name": "Kiki K",
+      "id": "update4",
       "checked" : "Buy food for strangers who are in need.",
       "description": "Bought an icecream for kids that are playing on the yard. :-) ",
       "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/dd6c902544e548c6b038ff08a1f620c6.jpeg"
@@ -42,5 +46,6 @@
         "id": "profile",
         "class": "fa fa-user"
       }
-    ]  
+    ],
+  "idea":[]  
 }
