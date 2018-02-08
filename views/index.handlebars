@@ -24,8 +24,8 @@
 	
 		<header><h1>Recent Updates</h1></header>
 
-		<!-- friends' updates -->
-		<!-- <div class="row">hi<i onclick="liked(this)" class="fas fa-heart"></i></div> -->
+		
+		
 		
 		<div class="container" data-spy="scroll">
 			{{#each updates}}
@@ -36,6 +36,7 @@
 		    <a href="/user/{{name}}"><h4 class="mt-0">{{name}}</h4></a>
 		    <a href="/idea/{{id}}"><h5 class="mt-0 checked "><i class="fas fa-flag-checkered"></i> {{checked}}</h5></a>
 		    <p>{{description}}</p>
+		    <a class="like"><i class="fas fa-heart"></i></a>
 		  </div>
 
 		</div>
@@ -61,16 +62,14 @@
 
 </div>
 
-	<script src="/js/index.js"></script>
-	<!-- <script src="https://code.jquery.com/jquery.js"></script> -->
 	
-	<!-- <script src="/js/bootstrap.min.js"></script> -->
 	
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+	<script src="/js/index.js"></script>
 </body>
 </html>
 
