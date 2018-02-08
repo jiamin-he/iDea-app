@@ -16,7 +16,7 @@ exports.view = function(req, res){
       },
       { 'name': 'Surprise',
         'id': 'surprise',
-        'class': 'fa fa-lightbulb-o'
+        'class': 'fa fa-lightbulb'
       },
       { 'name': 'Profile',
         'id': 'profile',
