@@ -4,7 +4,7 @@
  */
 
 exports.view = function(req, res){
-  res.render("index",{
+  res.render('profile',{
   	"bottom-bar": [
       { 'name': 'Index',
         'id': 'index',
@@ -16,7 +16,7 @@ exports.view = function(req, res){
       },
       { 'name': 'Surprise',
         'id': 'surprise',
-        'class': 'fa fa-lightbulb'
+        'class': 'fa fa-lightbulb-o'
       },
       { 'name': 'Profile',
         'id': 'profile',

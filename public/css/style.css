@@ -1,0 +1,110 @@
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 0.5em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+body {margin:0;}
+
+.checked {
+  text-decoration: line-through;
+  color:red;
+}
+
+.icon-bar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding: 0.5em 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 2em;
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.2);
+}
+
+.cardlist {
+    padding: 1em 1em;
+}
+
+.grid-container {
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: 33% 33% 33%;/*Make the grid smaller than the container*/
+  grid-gap: 1em;
+  background-color: #FFFFFF;
+  padding: 1em;
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  padding: 1em 0;
+  font-size: 0.5em;
+}
+
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.topnav {
+  background-color: #e9e9e9;
+  padding: 1em 1em;
+}
+.topnav .search-container {
+}
+
+.topnav input[type=text] {
+  padding: 1em 2em;
+  font-size: 1em;
+  border: none;
+}
+
+.topnav .search-container button {
+  padding: 1em 1em;
+  background: #ddd;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+
+
+
+
+
+   
+
+  
+  

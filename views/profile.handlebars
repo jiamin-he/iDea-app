@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Profile Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/introHCI.css" rel="stylesheet">
+	<!-- this is a comment in HTML -->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="container">
+		<header><h1>My Profile</h1></header>
+		
+		
+		
+		<!-- bottom bar -->
+		<div class="icon-bar">
+		{{#each bottom-bar}}
+		
+			<a href="/{{name}}" ><i class="{{class}}"></i>
+				<p>{{name}}</p>
+			</a>
+		
+		{{/each}}
+
+		<footer></footer>
+		</div>
+		
+
+		
+		
+	</div>
+
+</body>
+</html>

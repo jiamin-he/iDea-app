@@ -1,8 +1,107 @@
+<!doctype html>
+
 <html>
 <head>
-	<title>Test Page</title>
+	<title>Homepage</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- <link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet"> -->
+	<link href="/css/introHCI.css" rel="stylesheet">
+	<!-- this is a comment in HTML -->
+	<link rel="stylesheet" href="css/style.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->        
 </head>
+
 <body>
-Begin here (or replace this with any static code already written).
+	<div class="container">
+		<header><h1>Recent Updates</h1></header>
+
+		<!-- friends' updates -->
+		<!-- <div class="row">hi<i onclick="liked(this)" class="fas fa-heart"></i></div> -->
+		
+		<div class="media">
+		  <img class="d-flex mr-3" src="http://5b0988e595225.cdn.sohucs.com/images/20170924/7fa9f75a70fa45c394238d09a8717984.jpeg" alt="Generic placeholder image" style="width:10%">
+		  <div class="media-body">
+		    <h4 class="mt-0">Tracy</h4>
+		    <h5 class="mt-0 checked "><i class="fas fa-flag-checkered"></i> Take a bus or a train to a village or a town you have never visited to.</h5>
+		    Today I took a random bus to explore this city! Came across interesting stangers and bought him a cup of coffee. Feeling peaceful!
+		  </div>
+		</div>
+
+		<div class="media">
+		  <img class="mr-3" src="http://5b0988e595225.cdn.sohucs.com/images/20170924/8934fbf77e8246798bdef323334fdab6.jpeg" alt="Generic placeholder image" style="width:10%">
+		  <div class="media-body">
+		    <h4 class="mt-0">Keiser Batman</h4>
+		    <h5 class="mt-0 checked "><i class="fas fa-flag-checkered"></i> Say Hello to someone that you've never said to.</h5>
+		    Say hello to a mad neightbor, and gave him a smile. He seemed to calm down and tried smile back to me. 
+		  </div>
+		</div>
+
+		<div class="media">
+		  <img class="mr-3" src="http://5b0988e595225.cdn.sohucs.com/images/20170924/9ea7e9cbd1ef40d1ac8c9b44fd2fe220.jpeg" alt="Generic placeholder image" style="width:10%">
+		  <div class="media-body">
+		    <h4 class="mt-0">Jennifer Miao</h4>
+		    <h5 class="mt-0 checked "><i class="fas fa-flag-checkered"></i> Enjoy the scenery near where you live.</h5>
+		    Lying on the lawn !!! Sunshine!!! 
+		  </div>
+		</div>
+
+		<div class="media">
+		  <img class="mr-3" src="http://5b0988e595225.cdn.sohucs.com/images/20170924/dd6c902544e548c6b038ff08a1f620c6.jpeg" alt="Generic placeholder image" style="width:10%">
+		  <div class="media-body">
+		    <h4 class="mt-0">Kiki K</h4>
+		    <h5 class="mt-0 checked "><i class="fas fa-flag-checkered"></i> Buy food for strangers who are in need.</h5>
+		    Bought an icecream for kids that are playing on the yard. :-) 
+		  </div>
+		</div>
+		
+		
+		<!-- bottom bar -->
+		<div class="icon-bar">
+		{{#each bottom-bar}}
+		
+			<a href="/{{name}}" ><i class="{{class}}"></i>
+				<p>{{name}}</p>
+			</a>
+		
+		{{/each}}
+
+		<footer></footer>
+		</div>
+		
+
+		
+		
+	</div>
+
+	<script src="/js/index.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+	
+	<!-- <script src="/js/bootstrap.min.js"></script> -->
+	
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+
+	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>
+
+
+<!-- <div>bottom bar:
+<a class="button" href="/index">index</a>
+<a class="button" href="/explore">explore</a>
+<a class="button" href="/surpriseMe">Surprise Me</a>
+<a class="button" href="/profile">profile</a>
+
+</div> -->
+
