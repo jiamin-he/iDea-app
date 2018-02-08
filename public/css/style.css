@@ -1,6 +1,7 @@
 div.container {
     width: 100%;
     border: 1px solid gray;
+    padding-bottom: 7em;
 }
 
 header, footer {
@@ -11,15 +12,23 @@ header, footer {
     text-align: center;
 }
 
-body {margin:0;}
+body {
+  margin:0;
+  position:relative;
+}
 
 .checked {
   text-decoration: line-through;
   color:red;
 }
 
+.fixed-bottom {
+  left:auto;
+  right:auto;
+}
+
 .icon-bar {
-    width: 100%;
+    width: calc(100% - 30px);
     background-color: #555;
     overflow: auto;
 }
