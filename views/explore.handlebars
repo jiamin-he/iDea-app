@@ -25,11 +25,11 @@
     <button style="width:50%">Newest</button>
   </div>
 
-  <div class="grid-container" data-spy="scroll">
+  <div class="grid-container container" data-spy="scroll">
     {{#each ideas}}
     <div>
       <section  class="card">
-        <a href="/idea/{{id}}" class = "title">{{title}}</a>
+        <a href="idea/{{id}}" class = "title">{{title}}</a>
         <p class = "bottom-left"> <i class="fas fa-flag-checkered"></i>{{tried}}<i class="fas fa-heart"></i>{{liked}}</p>
         <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p>
       </section>
@@ -57,13 +57,15 @@
     </div>
 </div>
 
-<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="/js/explore.js"></script>
-  <script src="/js/idea.js"></script>
-  <script src="/js/user.js"></script>
+  <!-- <script src="/js/idea.js"></script>
+  <script src="/js/user.js"></script> -->
+  
 
 </body>
 </html>
