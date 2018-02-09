@@ -13,4 +13,11 @@ exports.view = function(req, res){
   		});
   	}
   }
+  for(i in data.ideas){
+  	if(data.ideas[i].id == id) {
+  		res.render("idea",{
+  			"idea":data.ideas[i]
+  		});
+  	}
+  }
 };
