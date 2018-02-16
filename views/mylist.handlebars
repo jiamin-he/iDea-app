@@ -37,15 +37,15 @@
       
       {{#each ideas}}
         {{#ifvalue userTried desired="false"}}
-          <div>
+          <section>
             <div class='myCard'>
               <p class = 'hello'>{{title}}</p>
-              <div class='info'>
+              <!-- <div class='info'>
                 <p class="title"><i class="far fa-calendar-check"></i> Feb 13 2018</p>
                 <p class='description'>{{description}}</p>
-              </div>
+              </div> -->
             </div>
-          </div>
+          </section>
 
         {{/ifvalue}}
       {{/each}}
@@ -55,17 +55,18 @@
     
 
     <div class="tab-pane fade" id="tried" role="tabpanel" aria-labelledby="TridMenu">
+
       {{#each ideas}}
         {{#ifvalue userTried desired="true"}}
-          <div>
+          <section>
             <div class='myCard'>
               <p class = 'hello'>{{title}}</p>
-              <div class='info'>
+              <!-- <div class='info'>
                 <p class="title"><i class="far fa-calendar-check"></i> Feb 13 2018</p>
                 <p class='description'>{{description}}</p>
-              </div>
+              </div> -->
             </div>
-          </div>
+          </section>
 
         {{/ifvalue}}
       {{/each}}

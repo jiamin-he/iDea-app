@@ -103,7 +103,7 @@ section.card:hover {
 .grid-container {
   display: grid;
   justify-content:space-evenly;
-  grid-template-columns: 50% 50%;/*Make the grid smaller than the container*/
+  /*grid-template-columns: 50% 50%; Make the grid smaller than the container*/
   grid-gap: 1em;
   background-color: #FFFFFF;
   padding: 1em;
@@ -200,7 +200,7 @@ main {
   height: 20em;
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
   overflow: hidden;
-  background-image: url(https://source.unsplash.com/collection/905011/1000x1000);
+  /*background-image: url(https://source.unsplash.com/collection/905011/1000x1000);*/
   background-size: cover;
   overflow: hidden;
 }
@@ -220,7 +220,7 @@ main {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-image: url(https://source.unsplash.com/collection/905011/1000x1000);
+  /*background-image: url(https://source.unsplash.com/collection/905011/1000x1000);*/
   filter: blur(10px);
   background-size: cover;
   opacity: 0.25;
