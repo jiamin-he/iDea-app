@@ -28,17 +28,21 @@
   </div>
 
   <div class="grid-container container" data-spy="scroll">
+
     {{#each ideas}}
-    <div>
-      <section  class="card">
-        <a href="idea/{{id}}" class = "title">{{title}}</a>
-        <p class = "bottom-left"> <i class="fas fa-check"></i>{{tried}} people tried this idea.
-          <!-- <i class="fas fa-heart"></i>{{liked}} -->
-        </p>
-        <!-- <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p> -->
-      </section>
-    </div>
-  {{/each}}
+        {{#ifvalue property desired="public"}}
+          <div>
+            <section  class="card">
+              <a href="idea/{{id}}" class = "title">{{title}}</a>
+              <p class = "bottom-left"> <i class="fas fa-check"></i>{{tried}} people tried this idea.
+                <!-- <i class="fas fa-heart"></i>{{liked}} -->
+              </p>
+              <!-- <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p> -->
+            </section>
+          </div>
+
+        {{/ifvalue}}
+      {{/each}}
   </div>
   
   <!-- ziyue's bottom bar -->

@@ -14,7 +14,7 @@ exports.addIdeas = function(req, res){
   	  "name":req.query.provider,
       "id": uniqid,
       "title" : req.query.title,
-      "tried": "0",
+      "tried": req.query.user_tried == 1?"1":"0",
       "liked":"0",
       "description": req.query.description,
       "imageURL": "",

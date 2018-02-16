@@ -28,6 +28,9 @@ var idea = require('./routes/idea');
 var add = require('./routes/add');
 var add_new_ideas = require('./routes/add_new_ideas');
 
+// Surprise Me New List tabs
+var surprise_list = require('./routes/surprise_list');
+
 // Example route
 // var user = require('./routes/user');
 
@@ -87,6 +90,9 @@ app.get('/idea/:id', idea.view);
 // Add new ideas Tabs
 app.get('/add_new_ideas', add_new_ideas.view);
 app.get('/add', add.addIdeas);
+
+// Surprise Me New List tabs
+app.get('/surprise_list', surprise_list.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
