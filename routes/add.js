@@ -23,5 +23,9 @@ exports.addIdeas = function(req, res){
   };
   console.log(newIdea);
   data.ideas.unshift(newIdea);
-  res.render("explore",data);
+  if(newIdea.property == "public") res.render("explore",data);
+  else if(newIdea.userTried == "true") {
+    res.render("mylist",data);
+    // $("#nav a[href="#tried"]").tab("show"); 
+  } else res.render("mylist",data);
 };

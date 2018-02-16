@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Explore</title>
+  <title>My list</title>
   <link rel="stylesheet" href="css/myListStyle.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,30 +13,67 @@
 <body>
 
 <div class="container-fluid">
-  <header><h1>Explore</h1></header>
+  <div class="top_menu_bar"><h1>My List</h1>
+    <a href="add_new_ideas"><i class="fas fa-plus fa-lg top_right_button"></i></a>
+  </div>
 
-  <div class="btn-group" style="width:100%">
+  <!-- <div class="btn-group" style="width:100%">
     <button style="width:50%">Ideas to Try</button>
     <button style="width:50%">Tried it!</button>
-  </div>
+  </div> -->
+  <ul class="nav nav-pills nav-justified nav-tabs" role="tablist" id="nav">
+    <li class="nav-item">
+      <a class="nav-link active" id="toTryMenu" data-toggle="tab" href="#toTry" role="tab" aria-controls="toTry" aria-selected="true">To Try</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="TridMenu" data-toggle="tab" href="#tried" role="tab" aria-controls="tried" aria-selected="false">Tried</a>
+    </li>
+  </ul>
 
-  <div class="grid-container container" data-spy="scroll">
-    {{#each ideas}}
-        {{#ifvalue property desired="public"}}
-          <h1>HI</h1>
+<div>
+  <div class="tab-content grid-container container" data-spy="scroll">
+
+    <div class="tab-pane fade show active" id="toTry" role="tabpanel" aria-labelledby="toTryMenu">
+      
+      {{#each ideas}}
+        {{#ifvalue userTried desired="false"}}
+          <div>
+            <div class='myCard'>
+              <p class = 'hello'>{{title}}</p>
+              <div class='info'>
+                <p class="title"><i class="far fa-calendar-check"></i> Feb 13 2018</p>
+                <p class='description'>{{description}}</p>
+              </div>
+            </div>
+          </div>
+
         {{/ifvalue}}
-    <div>
-  <div class='myCard'>
-    <p class = 'hello'>{{title}}</p>
-    <div class='info'>
-      <p class="title"><i class="far fa-calendar-check"></i> Feb 13 2018</p>
-      <p class='description'>{{description}}</p>
-    </div>
+      {{/each}}
+
   </div>
 
+    
+
+    <div class="tab-pane fade" id="tried" role="tabpanel" aria-labelledby="TridMenu">
+      {{#each ideas}}
+        {{#ifvalue userTried desired="true"}}
+          <div>
+            <div class='myCard'>
+              <p class = 'hello'>{{title}}</p>
+              <div class='info'>
+                <p class="title"><i class="far fa-calendar-check"></i> Feb 13 2018</p>
+                <p class='description'>{{description}}</p>
+              </div>
+            </div>
+          </div>
+
+        {{/ifvalue}}
+      {{/each}}
     </div>
-  {{/each}}
   </div>
+  
+</div>
+    
   
   
   <!-- bottom bar -->

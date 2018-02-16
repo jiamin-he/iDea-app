@@ -28,8 +28,8 @@ body {
 
 .top_menu_bar .top_right_button {
   position: absolute;
-  top: 1.25em;
-  right: 1.25em;
+  top: -2.25em;
+  right: -7.25em;
 }
 
 .checked {
