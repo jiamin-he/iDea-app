@@ -1,121 +1,95 @@
 {
-  "updates": [
-    {
-      "name": "Doug Engelbart",
-      "id": "update1",
-      "tried": "170",
-      "liked":"200",
-      "title" : "Take a bus or a train to a village or a town you have never visited to.",
-      "description": "Today I took a random bus to explore this city! Came across interesting stangers and bought him a cup of coffee. Feeling peaceful!",
-      "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/7fa9f75a70fa45c394238d09a8717984.jpeg"
-    },
-    {
-      "name": "Jennifer Miao",
-      "id": "update2",
-      "liked":"200",
-      "tried": "170",
-      "title" : "Say Hello to someone that you've never said to.",
-      "description": "Say hello to a mad neightbor, and gave him a smile. He seemed to calm down and tried smile back to me.",
-      "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/8934fbf77e8246798bdef323334fdab6.jpeg"
-    },
-    {
-      "name": "Keiser Batman",
-      "id": "update3",
-      "tried": "170",
-      "liked":"200",
-      "title" : "Enjoy the scenery near where you live.",
-      "description": "Lying on the lawn !!! Sunshine!!!",
-      "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/9ea7e9cbd1ef40d1ac8c9b44fd2fe220.jpeg"
-    },
-    {
-      "name": "Kiki K",
-      "id": "update4",
-      "tried": "170",
-      "liked":"200",
-      "title" : "Buy food for strangers who are in need.",
-      "description": "Bought an icecream for kids that are playing on the yard. :-) ",
-      "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/dd6c902544e548c6b038ff08a1f620c6.jpeg"
-    }
-  ],
   "ideas": [
     {
-      "name":"Treven",
+      "provider":"Treven",
       "id": "idea1",
       "title" : "This text is really long and the height of its container is only 100 pixels. Therefore, a scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.",
       "tried": "170",
       "liked":"200",
       "description": "Bought an icecream for kids that are playing on the yard. :-) ",
-      "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/dd6c902544e548c6b038ff08a1f620c6.jpeg"
+      "imageURL": "",
+      "property": "public",
+      "userTried": "false"
     },
     {
-      "name":"Treven",
-      "id": "idea2",
-      "title" : "Take a bus or a train to a village or a town you have never visited to.",
+      "provider":"Treven",
+      "id": "idea1",
+      "title" : "This text is really long and the height of its container is only 100 pixels. Therefore, a scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.",
       "tried": "170",
       "liked":"200",
       "description": "Bought an icecream for kids that are playing on the yard. :-) ",
-      "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/dd6c902544e548c6b038ff08a1f620c6.jpeg"
+      "imageURL": "",
+      "property": "public",
+      "userTried": "false"
     },
     {
-      "name":"Treven",
-      "id": "idea3",
-      "title" : "Take a bus or a train to a village or a town you have never visited to.",
+      "provider":"Treven",
+      "id": "idea1",
+      "title" : "This text is really long and the height of its container is only 100 pixels. Therefore, a scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.",
       "tried": "170",
       "liked":"200",
       "description": "Bought an icecream for kids that are playing on the yard. :-) ",
-      "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/dd6c902544e548c6b038ff08a1f620c6.jpeg"
+      "imageURL": "",
+      "property": "public",
+      "userTried": "false"
     },
     {
-      "name":"Treven",
-      "id": "idea4",
-      "title" : "Take a bus or a train to a village or a town you have never visited to.",
+      "provider":"Treven",
+      "id": "idea1",
+      "title" : "This text is really long and the height of its container is only 100 pixels. Therefore, a scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.",
       "tried": "170",
       "liked":"200",
       "description": "Bought an icecream for kids that are playing on the yard. :-) ",
-      "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/dd6c902544e548c6b038ff08a1f620c6.jpeg"
+      "imageURL": "",
+      "property": "public",
+      "userTried": "false"
     },
     {
-      "name":"Treven",
-      "id": "idea5",
-      "title" : "Take a bus or a train to a village or a town you have never visited to.",
+      "provider":"Treven",
+      "id": "idea1",
+      "title" : "This text is really long and the height of its container is only 100 pixels. Therefore, a scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.",
       "tried": "170",
       "liked":"200",
       "description": "Bought an icecream for kids that are playing on the yard. :-) ",
-      "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/dd6c902544e548c6b038ff08a1f620c6.jpeg"
+      "imageURL": "",
+      "property": "public",
+      "userTried": "false"
     },
     {
-      "name":"Treven",
-      "id": "idea6",
-      "title" : "Take a bus or a train to a village or a town you have never visited to.",
+      "provider":"Treven",
+      "id": "idea1",
+      "title" : "This text is really long and the height of its container is only 100 pixels. Therefore, a scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.",
       "tried": "170",
       "liked":"200",
       "description": "Bought an icecream for kids that are playing on the yard. :-) ",
-      "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/dd6c902544e548c6b038ff08a1f620c6.jpeg"
+      "imageURL": "",
+      "property": "private",
+      "userTried": "false"
     },
     {
-      "name":"Treven",
-      "id": "idea7",
-      "title" : "Take a bus or a train to a village or a town you have never visited to.",
+      "provider":"Treven",
+      "id": "idea1",
+      "title" : "This text is really long and the height of its container is only 100 pixels. Therefore, a scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.",
       "tried": "170",
       "liked":"200",
       "description": "Bought an icecream for kids that are playing on the yard. :-) ",
-      "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/dd6c902544e548c6b038ff08a1f620c6.jpeg"
+      "imageURL": "",
+      "property": "private",
+      "userTried": "false"
     },
     {
-      "name":"Treven",
-      "id": "idea8",
-      "title" : "Take a bus or a train to a village or a town you have never visited to.",
+      "provider":"Treven",
+      "id": "idea1",
+      "title" : "This text is really long and the height of its container is only 100 pixels. Therefore, a scrollbar is added to help the reader to scroll the content. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.",
       "tried": "170",
       "liked":"200",
       "description": "Bought an icecream for kids that are playing on the yard. :-) ",
-      "imageURL": "http://5b0988e595225.cdn.sohucs.com/images/20170924/dd6c902544e548c6b038ff08a1f620c6.jpeg"
+      "imageURL": "",
+      "property": "private",
+      "userTried": "false"
     }
   ],
   "bottom-bar": [
-      { "name": "Index",
-        "id": "index",
-        "class": "fa fa-home"
-      },
       { "name": "Explore",
         "id": "explore",
         "class": "fa fa-globe"
@@ -124,9 +98,13 @@
         "id": "surprise",
         "class": "fa fa-lightbulb"
       },
-      { "name": "Profile",
-        "id": "profile",
-        "class": "fa fa-user"
+      { "name": "MyList",
+        "id": "mylist",
+        "class": "fa fa-file-alt"
+      },
+      { "name": "Calendar",
+        "id": "calendar",
+        "class": "fa fa-calendar-alt"
       }
     ]  
 }

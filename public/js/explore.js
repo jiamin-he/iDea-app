@@ -11,6 +11,3 @@ $(document).ready(function() {
 
 function initializePage() {
 }
-
-/* A function to return random number from min to max */
-
