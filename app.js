@@ -15,6 +15,7 @@ var surprise = require('./routes/surprise');
 var profile = require('./routes/profile');
 var mylist = require('./routes/mylist');
 var calendar = require('./routes/calendar');
+var login = require('./routes/login');
 
 
 // User Profile Tabs
@@ -65,8 +66,8 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', explore.view);
-app.get('/index', index.view);
+app.get('/', login.view);
+app.get('/index', explore.view);
 // Example route
 // app.get('/users', user.list);
 
