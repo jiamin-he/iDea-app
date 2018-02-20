@@ -177,6 +177,8 @@ li:last-child label{
   top: 130%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding-bottom: 7em;
+  padding-top: 7em;
 }
 .button {
   padding: 0.75em 2em;

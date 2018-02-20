@@ -31,24 +31,25 @@
   </ul>
 
 <div>
-  <div class="tab-content grid-container container" data-spy="scroll">
+  <div class="tab-content container" data-spy="scroll">
 
     <div class="tab-pane fade show active" id="toTry" role="tabpanel" aria-labelledby="toTryMenu">
       
-      {{#each ideas}}
-        {{#ifvalue userTried desired="false"}}
-          <section>
-            <div class='myCard'>
-              <p class = 'hello'>{{title}}</p>
-              <!-- <div class='info'>
-                <p class="title"><i class="far fa-calendar-check"></i> Feb 13 2018</p>
-                <p class='description'>{{description}}</p>
-              </div> -->
+      <div class="row">
+        {{#each ideas}}
+          {{#ifvalue userTried desired="false"}}
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{title}}</h5>
+              <p class="card-text">{{description}}</p>
+              <a href="#" class="btn btn-primary">I tried it !</a>
             </div>
-          </section>
-
-        {{/ifvalue}}
-      {{/each}}
+          </div>
+        </div>
+          {{/ifvalue}}
+        {{/each}}
+      </div>
 
   </div>
 
@@ -56,20 +57,21 @@
 
     <div class="tab-pane fade" id="tried" role="tabpanel" aria-labelledby="TridMenu">
 
-      {{#each ideas}}
-        {{#ifvalue userTried desired="true"}}
-          <section>
-            <div class='myCard'>
-              <p class = 'hello'>{{title}}</p>
-              <!-- <div class='info'>
-                <p class="title"><i class="far fa-calendar-check"></i> Feb 13 2018</p>
-                <p class='description'>{{description}}</p>
-              </div> -->
+      <div class="row">
+        {{#each ideas}}
+          {{#ifvalue userTried desired="true"}}
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{title}}</h5>
+              <p class="card-text">{{description}}</p>
+              <a href="#" class="btn btn-primary">Reflection</a>
             </div>
-          </section>
-
-        {{/ifvalue}}
-      {{/each}}
+          </div>
+        </div>
+          {{/ifvalue}}
+        {{/each}}
+      </div>
     </div>
   </div>
   
