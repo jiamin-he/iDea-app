@@ -1,3 +1,8 @@
+.modal-dialog {
+  width:100%;
+  top:25%;
+}
+
 div.container {
     width: 100%;
     border: 1px solid gray;
@@ -273,6 +278,3 @@ a {
   color: #e03616;
   text-decoration: none;
 }
-
-  
-  

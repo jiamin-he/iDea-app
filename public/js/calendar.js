@@ -62,8 +62,10 @@ function initializePage() {
   Calendar.prototype.drawMonth = function() {
     var self = this;
     
+    // produce random dates for each event.
     this.events.forEach(function(ev) {
      ev.date = self.current.clone().date(Math.random() * (29 - 1) + 1);
+     console.log(ev.date);
     });
     
     
@@ -350,7 +352,8 @@ function initializePage() {
     { eventName: 'Adventurous - 4', calendar: 'Adventurous', color: 'green' }
   ];
 
-  
+  // var data = require('../update.json');
+  // var data = require(['../../update.json']);
 
   function addDate(ev) {
     

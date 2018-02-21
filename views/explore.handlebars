@@ -8,9 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
 <body>
 
 <div class="container-fluid">
+  <!-- try use "card" in bootstrap here. -->
+
   <div class="top_menu_bar"><h1>Explore</h1>
     <a href="add_new_ideas"><i class="fas fa-plus fa-lg top_right_button"></i></a>
   </div>
@@ -19,6 +22,13 @@
     <input type="text" placeholder="Search.." name="search">
     <button type="submit"><i class="fa fa-search"></i></button>
   </form>
+
+  <!-- <nav class="navbar navbar-light bg-faded justify-content-between">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  </nav> -->
 
 
 
@@ -45,14 +55,19 @@
       {{/each}}
   </div>
   
-  <!-- ziyue's bottom bar -->
-  <!-- <div class="icon-bar">
-  <a class="active" href="#"><i class="fa fa-lightbulb-o"></i></a> 
-  <a href="#"><i class="fa fa-globe"></i></a>
-    <a href="#"><i class="fa fa-user"></i></a>  --> 
+    <!-- new bottom bar. better bootstrap -->
+    <!-- <nav class="navbar navbar-light fixed-bottom" style="background-color: #e3f2fd;">
 
-  <!-- bottom bar -->
-    <div class="icon-bar fixed-bottom">
+    {{#each bottom-bar}}
+    
+      <a href="/{{name}}" ><i class="{{class}}"></i>
+      </a>
+    
+    {{/each}}
+    </nav> -->
+
+    <nav class="icon-bar fixed-bottom">
+
     {{#each bottom-bar}}
     
       <a href="/{{name}}" ><i class="{{class}}"></i>
@@ -60,9 +75,11 @@
       </a>
     
     {{/each}}
+    </nav>
 
-    <footer></footer>
-    </div>
+
+
+
 </div>
 
   

@@ -87,6 +87,9 @@ app.get('/user/:name', user.view);
 // Idea Details Tabs
 app.get('/idea/:id', idea.view);
 
+// Idea tried
+app.get('/idea/tried/:triedId', mylist.tried);
+
 // Add new ideas Tabs
 app.get('/add_new_ideas', add_new_ideas.view);
 app.get('/add', add.addIdeas);

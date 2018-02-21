@@ -15,7 +15,8 @@ header, footer {
 .top_menu_bar {
     padding: 0.5em;
     color: white;
-    background-color: black;
+    /*background-color: #e3f2fd;*/
+    background-color: black; 
     clear: left;
     text-align: center;
     position: relative;
@@ -40,6 +41,7 @@ body {
 .fixed-bottom {
   left:auto!important;
   right:auto!important;
+  width: calc(100% - 30px);
 }
 
 .icon-bar {
