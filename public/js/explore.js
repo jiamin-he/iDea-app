@@ -11,3 +11,8 @@ $(document).ready(function() {
 
 function initializePage() {
 }
+
+$('.top_right_button_card').click(function(){
+    window.location.href = "/add_to_my_list";
+    $(this).find('i').toggleClass('fas fa-minus fa-lg')
+});

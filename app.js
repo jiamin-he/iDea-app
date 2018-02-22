@@ -70,12 +70,12 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', login.view);
-app.get('/index', explore.view);
+app.get('/index', explore.defaultView);
 // Example route
 // app.get('/users', user.list);
 
 // Main Tabs
-app.get('/explore', explore.view);
+app.get('/explore', explore.defaultView);
 app.get('/surprise', surprise.view);
 app.get('/profile', profile.view);
 app.get('/calendar', calendar.view);
@@ -96,6 +96,9 @@ app.get('/add', add.addIdeas);
 
 // Surprise Me New List tabs
 app.get('/surprise_list', surprise_list.view);
+
+// Quickly add to my list tab
+app.get('/add_to_my_list/:id', add.quicklyAdd);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
