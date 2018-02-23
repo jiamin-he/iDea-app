@@ -10,6 +10,7 @@
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet"> -->
 	<!-- this is a comment in HTML -->
 	<link rel="stylesheet" href="css/login.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -20,17 +21,20 @@
 
 <body>
 	<div class="container-fluid">
+
     <div class="form">
-      
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
-      </ul>
       
       <div class="tab-content">
         <div id="signup">   
-          <h1>Sign Up for Free</h1>
-          
+          <h1>Sign Up or Login with Facebook</h1>
+           <p class="facebookLogin">
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
+      </p>
+      <div id="facebookPhoto" class="profile">
+      <p style="color: #fff;">Profile Photo</p>
+      <img id="photo" class='img-responsive' src="http://hci.stanford.edu/courses/cs547/Resources/Pictures/klemmer_grad.jpg" width="100" />
+    </div>
           <form action="/Explore" method="get">
             <!-- method == post -->
           
@@ -100,6 +104,8 @@
       </div><!-- tab-content -->
       
 </div> <!-- /form -->
+
+
 	
 		
 		
@@ -114,6 +120,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<script src="/js/login.js"></script>
+  {{> facebook}}
+  <script src="/js/facebook.js"></script>
 </body>
 </html>
 
