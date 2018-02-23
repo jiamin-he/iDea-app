@@ -76,6 +76,7 @@ app.get('/index', explore.defaultView);
 
 // Main Tabs
 app.get('/explore', explore.defaultView);
+app.get('/explore2', explore.altView);
 app.get('/surprise', surprise.view);
 app.get('/profile', profile.view);
 app.get('/calendar', calendar.view);
@@ -98,7 +99,7 @@ app.get('/add', add.addIdeas);
 app.get('/surprise_list', surprise_list.view);
 
 // Quickly add to my list tab
-app.get('/add_to_my_list/:id', add.quicklyAdd);
+app.get('/add_to_my_list/:stayPage/:id', add.quicklyAdd);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

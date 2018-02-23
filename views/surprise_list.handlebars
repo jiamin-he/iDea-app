@@ -37,25 +37,25 @@
               <h5 class="card-title"><a href="idea/{{id}}">{{title}}</a></h5>
               <p class="card-text">{{description}}</p>
 
-              <p class = "card-text"> 
-                <i class="fas fa-check"></i>{{tried}} people tried this idea.
-                <br/>
-                <i class="fas fa-heart"></i>{{liked}} people liked this idea.
-                <br/>
-                <i class="fas fa-calendar"></i>Created on {{createTime}} by {{provider}}.
-              </p>
 
               {{#ifvalue myList desired="true"}}              
-              <a href="/add_to_my_list/{{id}}" class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a>
+              <a href="/add_to_my_list/surprise_list/{{id}}" class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a>
               <!-- <a class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a> -->
 
               {{/ifvalue}}
 
               {{#ifvalue myList desired="false"}}              
-              <a href="/add_to_my_list/{{id}}" class=" top_right_button_card" ><i class="fas fa-plus fa-lg"></i></a>
+              <a href="/add_to_my_list/surprise_list/{{id}}" class=" top_right_button_card" ><i class="fas fa-plus fa-lg"></i></a>
               <!-- <a class=" top_right_button_card" ><i class="fas fa-plus fa-lg"></i></a> -->
 
               {{/ifvalue}}
+
+              <p class = "card-text"> 
+                
+                <i class="fas fa-heart"></i>{{liked}} people liked this idea.
+                <br/>
+                <i class="fas fa-check"></i>{{tried}} people tried this idea.
+              </p>
 
 
               

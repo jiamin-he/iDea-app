@@ -72,5 +72,7 @@ exports.quicklyAdd = function(req, res){
   // if(index >= 0) data.ideas.splice(index,1);
   // data.ideas.unshift(object);
   // res.render('explore',data);
-  res.redirect('/explore');
+  var stayPage = req.params.stayPage;
+  if(stayPage == "explore") res.redirect('/explore');
+  else res.redirect('myList');
 };

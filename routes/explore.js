@@ -19,3 +19,7 @@ exports.defaultView = function(req, res){
   // console.log(data.ideas);
   res.render('explore',data);
 };
+
+exports.altView = function(req, res){
+  res.render('explore2',data);
+}
