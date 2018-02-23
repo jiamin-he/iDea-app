@@ -330,6 +330,12 @@ function initializePage() {
 }();
 
 !function() {
+  
+  $.get( "ajax/test.html", function( data ) {
+    $( ".result" ).html( data );
+    alert( "Load was performed." );
+  });
+
   var data = [
     { eventName: 'Stress-relieving - 1', calendar: 'Stress-relieving', color: 'orange' },
     { eventName: 'Stress-relieving - 2', calendar: 'Stress-relieving', color: 'orange' },

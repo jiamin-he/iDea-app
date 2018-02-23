@@ -5,46 +5,67 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Surprise list</title>
-  <link rel="stylesheet" href="css/myListStyle.css">
+  <title>My list</title>
+  <link rel="stylesheet" href="/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 
+
 <div class="container-fluid">
+
   <div class="top_menu_bar"><h1>Surprise List</h1>
-  </div>
-
-
-<div>
-  <a href="javascript:window.history.back()"><i class="fas fa-chevron-circle-left"></i></a>
-  <div class="tab-content grid-container container" data-spy="scroll">
-
-    <div>
-      
-      {{#each ideas}}
-        {{#ifvalue feeling desired="stress-relieving"}}
-          <section>
-            <div class='myCard'>
-              <p class = 'hello'>{{title}}</p>
-              <!-- <div class='info'>
-                <p class="title"><i class="far fa-calendar-check"></i> Feb 13 2018</p>
-                <p class='description'>{{description}}</p>
-              </div> -->
-            </div>
-          </section>
-
-        {{/ifvalue}}
-      {{/each}}
-
-  </div>
-
-   
-  </div>
-  
-</div>
+    <!-- <a href="add_new_ideas"><i class="fas fa-plus fa-lg top_right_button"></i></a> -->
+    <a href="javascript:window.history.back()"><i class="fas fa-chevron-circle-left"></i></a>
     
+    {{#each option}}
+    <span class="badge {{class}}">{{name}}</span>
+    {{/each}}
+
+  </div>
+
+
+  
+      <div class="row">
+        {{#each all}}
+
+            {{#ifvalue userTried desired="false"}}
+        <div class="col-sm-6">
+          <div class="card" id="block-{{id}}">
+            <div class="card-body">
+              <h5 class="card-title"><a href="idea/{{id}}">{{title}}</a></h5>
+              <p class="card-text">{{description}}</p>
+
+              <p class = "card-text"> 
+                <i class="fas fa-check"></i>{{tried}} people tried this idea.
+                <br/>
+                <i class="fas fa-heart"></i>{{liked}} people liked this idea.
+                <br/>
+                <i class="fas fa-calendar"></i>Created on {{createTime}} by {{provider}}.
+              </p>
+
+              {{#ifvalue myList desired="true"}}              
+              <a href="/add_to_my_list/{{id}}" class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a>
+              <!-- <a class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a> -->
+
+              {{/ifvalue}}
+
+              {{#ifvalue myList desired="false"}}              
+              <a href="/add_to_my_list/{{id}}" class=" top_right_button_card" ><i class="fas fa-plus fa-lg"></i></a>
+              <!-- <a class=" top_right_button_card" ><i class="fas fa-plus fa-lg"></i></a> -->
+
+              {{/ifvalue}}
+
+
+              
+            </div>
+          </div>
+        </div>
+            {{/ifvalue}}
+
+        {{/each}}
+      </div>
   
   
   <!-- bottom bar -->
@@ -59,11 +80,15 @@
 
     <footer></footer>
     </div>
+
 </div>
+
+
 
   
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="/js/mylist.js"></script>

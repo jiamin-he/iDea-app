@@ -5,57 +5,177 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- this is a comment in HTML -->
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/surprise.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<!-- <link rel="stylesheet" href="../css/surprise.css"> -->
 </head>
 <body>
 
 <div class="container-fluid ">
-		<header><h1>Surprise Me</h1></header>
+		<div class="top_menu_bar"><h1>Surprise Me</h1>
+  		</div>
+  		<a href="javascript:window.history.back()"><i class="fas fa-chevron-circle-left"></i></a>
+
+		<form role="form" method="get" action="/surprise_list">
+			<fieldset class="form-group">
+			    <div class="row">
+			      <legend class="col-form-label col-sm-2 pt-0">You want to try something...</legend>
+			      <div class="col-sm-10">
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="feeling" id="adventurous" value="adventurous">
+			          <label class="form-check-label" for="adventurous">
+			            Adventurous
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="feeling" id="stress-relieving" value="stress-relieving" checked>
+			          <label class="form-check-label" for="stress-relieving">
+			            stress-relieving
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="feeling" id="charitable" value="charitable">
+			          <label class="form-check-label" for="charitable">
+			            charitable
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="feeling" id="relaxing" value="relaxing">
+			          <label class="form-check-label" for="relaxing">
+			            relaxing
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="feeling" id="productive" value="productive">
+			          <label class="form-check-label" for="productive">
+			            productive
+			          </label>
+			        </div>
+			      </div>
+			    </div>
+
+			    <br/>
+			    <div class="row">
+			      <legend class="col-form-label col-sm-2 pt-0">How much time do you have?</legend>
+			      <div class="col-sm-10">
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="time" id="minutes" value="minutes" checked>
+			          <label class="form-check-label" for="minutes">
+			            minutes
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="time" id="hours" value="hours">
+			          <label class="form-check-label" for="hours">
+			            hours
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="time" id="days" value="days">
+			          <label class="form-check-label" for="days">
+			            days
+			          </label>
+			        </div>
+			      </div>
+			    </div>
+
+				<br/>
+			    <div class="row">
+			      <legend class="col-form-label col-sm-2 pt-0">How much money do you want to spend?</legend>
+			      <div class="col-sm-10">
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="cost" id="$" value="$">
+			          <label class="form-check-label" for="$">
+			            $
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="cost" id="$$" value="$$">
+			          <label class="form-check-label" for="$$">
+			            $$
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="cost" id="$$$" value="$$$" checked>
+			          <label class="form-check-label" for="$$$">
+			            $$$
+			          </label>
+			        </div>
+			      </div>
+			    </div>
+
+			  </fieldset>
+	      <button type="submit" class="btn btn-primary wrapper">Surprise Me !</button>
+
+	    </form>
+
+
+	    <!-- previous version for suprise -->
+		<!-- <h4>You want to try something...</h4>
+				<div class="steps">
+					  <ul id="sortable">
+					    <li>
+					      <input id='label-1' type='checkbox'/>
+					      <label for='label-1'>
+					        <h5>Advanturous</h5>   
+					      </label>
+					    </li>
+					    
+					    <li>
+					      <input id='label-2' type='checkbox' checked/>
+					      <label for='label-2'>
+					        <h5>Stress-relieving</h5>   
+					      </label>
+					    </li>
+					    
+						  <li>
+					      <input id='label-3' type='checkbox'/>
+					      <label for='label-3'>
+					        <h5>Charitable</h5>   
+					      </label>
+					    </li>
+					    
+						  <li>
+					    <input id='label-4' type='checkbox'/>
+					     <label for='label-4'>
+					        <h5>Relaxing</h5>   
+					      </label>
+					    </li>
+					    
+						  <li>
+					     <input id='label-5' type='checkbox'/>
+					     <label for='label-5'>
+					        <h5>Productive</h5>   
+					      </label>
+					    </li>
+					    
+					  </ul>
+				</div>
 		
-		<h3>I want to try something...</h3>
-		<div class="steps">
-			  <ul id="sortable">
-			    <li>
-			      <input id='label-1' type='checkbox'/>
-			      <label for='label-1'>
-			        <h5>Advanturous</h5>   
-			      </label>
-			    </li>
-			    
-			    <li>
-			      <input id='label-2' type='checkbox' checked/>
-			      <label for='label-2'>
-			        <h5>Stress-relieving</h5>   
-			      </label>
-			    </li>
-			    
-				  <li>
-			      <input id='label-3' type='checkbox'/>
-			      <label for='label-3'>
-			        <h5>Charitable</h5>   
-			      </label>
-			    </li>
-			    
-				  <li>
-			    <input id='label-4' type='checkbox'/>
-			     <label for='label-4'>
-			        <h5>Relaxing</h5>   
-			      </label>
-			    </li>
-			    
-				  <li>
-			     <input id='label-5' type='checkbox'/>
-			     <label for='label-5'>
-			        <h5>Productive</h5>   
-			      </label>
-			    </li>
-			    
-			  </ul>
+		<br />
+		<br />
+		<br />
+
+        <div>
+        	<h4>How much time do you have?</h4>
+			<input type="text" id="duration" name="duration">
+			<input id="btn" type="button" value="Submit">
+	        <br>
+	        <input id="result" type="text">
+		</div>
+        <br />
+		<div>
+			<h4>How much do you want to spend?</h4>
+            <div class="btn-group">
+              <button>free</button>
+			  <button>$</button>
+			  <button>$$</button>
+			  <button>$$</button>
+			</div>
 		</div>
 		<div class="wrapper">
   			<a href="/surprise_list" class="button">Surprise!</a>
-		</div>
+		</div> -->
+
 
 		<!-- bottom bar -->
 		<div class="icon-bar fixed-bottom">
@@ -79,5 +199,6 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src = /js/surprise.js></script>
 </body>
 </html>

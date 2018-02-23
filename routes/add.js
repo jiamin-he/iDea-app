@@ -6,9 +6,11 @@ var data = require('../update.json');
 
 exports.addIdeas = function(req, res){
   var uniqid = Date.now();
+  var date = new Date();
+  // console.log(uniqid);
+  // console.log(date.valueOf());
   var randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
   var uniqid = randLetter + Date.now();
-  console.log(uniqid);
   var newIdea = {
   	  "name":req.query.provider,
       "id": uniqid,
@@ -17,18 +19,31 @@ exports.addIdeas = function(req, res){
       "liked":"0",
       "description": req.query.description,
       "imageURL": "",
-      "createTime": Date.now(),
-      "operationTime": Date.now(),
+      "createTime": date.toString(),
+      "operationTime": date.toString(),
       "property": req.query.add_to == 1?"public":"private",
-      "userTried": req.query.user_tried == 1?"true":"false"
+      "userTried": req.query.user_tried == 1?"true":"false",
+      "feeling": "advanturous",
+      "date":"",
+      "reflection": "",
+      "eventName": "Adventurous - 1", 
+      "calendar": "Adventurous", 
+      "color": "pink",
+      "myList": "true",
+      "notes": [],
+      "cost": "$$",
+      "time": "minutes",
+      "comments": [{"data": "1519265609445" ,"comment": "good idea!"}]
   };
-  console.log(newIdea);
+  // console.log(newIdea);
   data.ideas.unshift(newIdea);
-  if(newIdea.property == "public") res.render("explore",data);
+  if(newIdea.property == "public") res.redirect('/explore');//res.render("explore",data);
   else if(newIdea.userTried == "true") {
-    res.render("mylist",data);
+    res.redirect('/mylist');
+    // res.render("mylist",data);
     // $("#nav a[href="#tried"]").tab("show"); 
-  } else res.render("mylist",data);
+  } else res.redirect('/mylist'); 
+  // res.render("mylist",data);
 };
 
 // exports.tried = function(req, res){
@@ -47,7 +62,8 @@ exports.quicklyAdd = function(req, res){
   for(i in data.ideas) {
     if(data.ideas[i].id == req.params.id) {
       data.ideas[i].myList="true";
-      data.ideas[i].operationTime = Date.now();
+      var temp = new Date();
+      data.ideas[i].operationTime = temp.toString();
       // index = i;
       // object = data.ideas[i];
       break;
@@ -55,5 +71,6 @@ exports.quicklyAdd = function(req, res){
   }
   // if(index >= 0) data.ideas.splice(index,1);
   // data.ideas.unshift(object);
-  res.render('explore',data);
+  // res.render('explore',data);
+  res.redirect('/explore');
 };

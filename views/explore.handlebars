@@ -74,7 +74,10 @@
               {{/ifvalue}}
 
               <p class = "bottom-left"> 
+                <i class="fas fa-calendar"></i>Created on {{createTime}} by {{provider}}.
+                <br/>
                 <i class="fas fa-heart"></i>{{liked}} people liked this idea.
+                <br/>
                 <i class="fas fa-check"></i>{{tried}} people tried this idea.
               </p>
               <!-- <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p> -->
@@ -107,8 +110,12 @@
 
               {{/ifvalue}}
 
-              <p class = "bottom-left"> <i class="fas fa-check"></i>{{tried}} people tried this idea.
-                <!-- <i class="fas fa-heart"></i>{{liked}} -->
+              <p class = "bottom-left"> 
+                <i class="fas fa-check"></i>{{tried}} people tried this idea.
+                <br/>
+                <i class="fas fa-heart"></i>{{liked}} people liked this idea.
+                <br/>
+                <i class="fas fa-calendar"></i>Created on {{createTime}} by {{provider}}.
               </p>
               <!-- <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p> -->
             </section>

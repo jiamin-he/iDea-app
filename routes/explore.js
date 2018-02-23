@@ -9,11 +9,13 @@ var data = require('../update.json');
 exports.defaultView = function(req, res){
   data["ideas2"]=data.ideas.slice();
   data.ideas.sort(function(a,b){
-  	return b.createTime - a.createTime;
+  	var dateA = new Date(a.createTime);
+  	var dateB = new Date(b.createTime);
+  	return dateB.valueOf() - dateA.valueOf();
   });
   data.ideas2.sort(function(a,b){
   	return b.tried - a.tried;
   });
-  console.log(data);
+  // console.log(data.ideas);
   res.render('explore',data);
 };

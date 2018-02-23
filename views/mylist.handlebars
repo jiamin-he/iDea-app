@@ -43,24 +43,24 @@
         <div class="col-sm-6">
           <div class="card" id="block-{{id}}">
             <div class="card-body">
-              <h5 class="card-title">{{title}}</h5>
+              <h5 class="card-title"><a href="idea/{{id}}">{{title}}</a></h5>
               <p class="card-text">{{description}}</p>
-              <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModal">I tried it !</button>
-
+              <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModal-{{id}}">I tried it !</button>
+              
               <!-- pop up dialog -->
-              <div class="modal fade" id="reflectionModal" tabindex="-1" role="dialog" aria-labelledby="reflectionModalLabel" aria-hidden="true">
+              <div class="modal fade" id="reflectionModal-{{id}}" tabindex="-1" role="dialog" aria-labelledby="reflectionModalLabel-{{id}}" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
 
                     <div class="modal-header">
-                      <h5 class="modal-title" id="reflectionModalLabel">New reflection</h5>
+                      <h5 class="modal-title" id="reflectionModalLabel-{{id}}">New reflection</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
 
                     <div class="modal-body">
-                      <form role="form" method="get" action="/idea/tried/{{id}}">
+                      <form role="form" method="get" action="/idea/tried/mylist/{{id}}">
                         <!-- <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Recipient:</label>
                           <input type="text" class="form-control" id="recipient-name">
@@ -68,6 +68,14 @@
                         <div class="form-group">
                           <label for="reflection" class="col-form-label">How did you feel trying this idea?</label>
                           <input type="text" class="form-control" placeholder="Write down some cool stories or feelings!" name="reflection"></input>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="property">Would you like to share your reflection to others?</label>
+                          <select class="form-control" name="property" >
+                            <option value="1">Yep!</option>
+                            <option value="2">Nope...</option>
+                          </select>
                         </div>
 
                         <div class="modal-footer">
@@ -101,16 +109,63 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">{{title}}</h5>
+              <h5 class="card-title"> <a href="idea/{{id}}">{{title}}</a></h5>
               <p class="card-text">{{description}}</p>
+
+              <!-- I tried it again button -->
+              <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModalAgain-{{id}}">I tried it again!</button>
+              
+              <!-- pop up dialog -->
+              <div class="modal fade" id="reflectionModalAgain-{{id}}" tabindex="-1" role="dialog" aria-labelledby="reflectionModalAgainLabel-{{id}}" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="reflectionModalAgainLabel-{{id}}">New reflection</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+
+                    <div class="modal-body">
+                      <form role="form" method="get" action="/idea/tried/mylist/{{id}}">
+                        <!-- <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Recipient:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div> -->
+                        <div class="form-group">
+                          <label for="reflection" class="col-form-label">How did you feel trying this idea?</label>
+                          <input type="text" class="form-control" placeholder="Write down some cool stories or feelings!" name="reflection"></input>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="property">Would you like to share your reflection to others?</label>
+                          <select class="form-control" name="property" >
+                            <option value="1">Yep!</option>
+                            <option value="2">Nope...</option>
+                          </select>
+                        </div>
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+                          <button type="submit" class="btn btn-primary">Continue</button>
+                        </div>
+
+                      </form>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <!-- I tried it agian button part -->
+
               <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample_{{id}}" aria-expanded="false" aria-controls="collapseExample_{{id}}">Reflection</button>
-              {{operationTime}}
+              
               <div class="collapse" id="collapseExample_{{id}}">
                 {{#each notes}}
                   <h5>{{date}}</h5>
                   <p>{{reflection}}</p>
                 {{/each}}
-                test--hihiihiihi-whywhywhy
               </div>
               
 
