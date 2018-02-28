@@ -3,18 +3,16 @@
   margin: 0;
   padding: 0;
 }
-html, body {
-  font-size: 62.5%;
-}
+
 body {
   background: #63bdf7;
   overflow: hidden;
 }
 .demo {
   position: absolute;
-  left: 50%;
-  top: 350%;
-  width: 30.6rem;
+  left: 71%;
+  top: 550%;
+  width: 21rem;
   height: 54rem;
   margin-left: -15.3rem;
   margin-top: -27rem;
@@ -44,7 +42,7 @@ body {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 60%;
   transform-origin: 50% 100%;
 }
 .demo__card.reset {
@@ -68,8 +66,8 @@ body {
   z-index: 1;
 }
 .demo__card__top {
-  height: 22rem;
-  padding-top: 4rem;
+  height: 15rem;
+  padding-top: 2rem;
 }
 .demo__card__top.purple {
   background: #7132b9;
@@ -101,7 +99,7 @@ body {
 }
 .demo__card__name {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
 }
@@ -111,7 +109,7 @@ body {
 }
 .demo__card__we {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 1rem;
   line-height: 4rem;
 }
 .demo__card__choice {
@@ -167,5 +165,5 @@ body {
 }
 .demo__tip {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 1rem;
 }

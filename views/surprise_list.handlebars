@@ -17,16 +17,16 @@
 
   <div class="top_menu_bar"><h1>Surprise List</h1>
     <!-- <a href="add_new_ideas"><i class="fas fa-plus fa-lg top_right_button"></i></a> -->
-    <a href="javascript:window.history.back()"><i class="fas fa-chevron-circle-left"></i></a>
+    <a href="javascript:window.history.back()"><i class="fas fa-chevron-circle-left" style="color: white;"></i></a>
     
     {{#each option}}
     <span class="badge {{class}}">{{name}}</span>
     {{/each}}
-
   </div>
 
 
-  
+  <div class="card-columns">
+     <br />
       <div class="row">
         {{#each all}}
 
@@ -34,8 +34,9 @@
         <div class="col-sm-6">
           <div class="card" id="block-{{id}}">
             <div class="card-body">
-              <h5 class="card-title"><a href="idea/{{id}}">{{title}}</a></h5>
-              <p class="card-text">{{description}}</p>
+              <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
+              <h5 class="card-title" style="text-align: center;"><a href="idea/{{id}}">{{title}}</a></h5>
+              <p class="card-text" style="text-align: center;">{{description}}</p>
 
 
               {{#ifvalue myList desired="true"}}              
@@ -50,15 +51,11 @@
 
               {{/ifvalue}}
 
-              <p class = "card-text"> 
-                
-                <i class="fas fa-heart"></i>{{liked}} people liked this idea.
-                <br/>
-                <i class="fas fa-check"></i>{{tried}} people tried this idea.
-              </p>
-
-
               
+              
+            </div>
+             <div class="card-footer">
+                  <small class="text-muted"><i class="fas fa-check"></i>  {{tried}} people tried this idea.</small>
             </div>
           </div>
         </div>
@@ -66,6 +63,7 @@
 
         {{/each}}
       </div>
+    </div>
   
   
   <!-- bottom bar -->

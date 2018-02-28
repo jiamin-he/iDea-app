@@ -26,44 +26,29 @@
       
       <div class="tab-content">
         <div id="signup">   
-          <h1>Sign Up or Login with Facebook</h1>
-           <p class="facebookLogin">
+          <h1>Login</h1>
+           <p class="facebookLogin" style="text-align: center;">
         <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
         </fb:login-button>
       </p>
-      <div id="facebookPhoto" class="profile">
-      <p style="color: #fff;">Profile Photo</p>
-      <img id="photo" class='img-responsive' src="http://hci.stanford.edu/courses/cs547/Resources/Pictures/klemmer_grad.jpg" width="100" />
+      <div id="facebookPhoto" class="profile" style="text-align: center;">
+      <p style="color: #fff;">
+      <img id="photo" class='img-responsive' src="http://hci.stanford.edu/courses/cs547/Resources/Pictures/klemmer_grad.jpg" width="100" /></p>
     </div>
           <form action="/Explore" method="get">
             <!-- method == post -->
           
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                First Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
-          </div>
 
           <div class="field-wrap">
             <label>
-              Email Address<span class="req">*</span>
+              Username<span class="req"></span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input type="text"  required autocomplete="off"/>
           </div>
           
           <div class="field-wrap">
             <label>
-              Set A Password<span class="req">*</span>
+              Password<span class="req"></span>
             </label>
             <input type="password"required autocomplete="off"/>
           </div>

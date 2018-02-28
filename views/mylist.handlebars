@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <title>My list</title>
-  <link rel="stylesheet" href="/css/myListStyle.css">
+  <link rel="stylesheet" href="/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -35,7 +35,8 @@
   <div class="tab-content container" data-spy="scroll">
 
     <div class="tab-pane fade show active" id="toTry" role="tabpanel" aria-labelledby="toTryMenu">
-      
+       <br />
+      <div class="card-columns">
       <div class="row">
         {{#each ideas}}
           {{#ifvalue myList desired="true"}}
@@ -43,10 +44,16 @@
         <div class="col-sm-6">
           <div class="card" id="block-{{id}}">
             <div class="card-body">
-              <h5 class="card-title"><a href="idea/{{id}}">{{title}}</a></h5>
-              <p class="card-text">{{description}}</p>
-              <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModal-{{id}}">I tried it !</button>
-              
+              <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
+              <h5 class="card-title" style="text-align: center;"><a href="idea/{{id}}">{{title}}</a></h5>
+              <p class="card-text" style="text-align: center;">{{description}}
+              <br />
+              <span class="badge badge-primary">{{feeling}}</span>
+              <span class="badge badge-success">{{time}}</span>
+              <span class="badge badge-warning">{{cost}}</span>
+              <br />
+              <br />
+              <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModal-{{id}}" style="width: 10em; background-color: #428bca;">I tried it !</button></p>
               <!-- pop up dialog -->
               <div class="modal fade" id="reflectionModal-{{id}}" tabindex="-1" role="dialog" aria-labelledby="reflectionModalLabel-{{id}}" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -96,12 +103,14 @@
           {{/ifvalue}}
         {{/each}}
       </div>
+      </div>
   </div>
 
     
 
     <div class="tab-pane fade" id="tried" role="tabpanel" aria-labelledby="TridMenu">
-
+      <br />
+      <div class="card-columns">
       <div class="row">
         {{#each ideas}}
           {{#ifvalue myList desired="true"}}
@@ -109,11 +118,26 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title"> <a href="idea/{{id}}">{{title}}</a></h5>
-              <p class="card-text">{{description}}</p>
-
+              <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
+              <h5 class="card-title" style="text-align: center;"> <a href="idea/{{id}}">{{title}}</a></h5>
+              <p class="card-text" style="text-align: center;">{{description}}
+              <br />
+              <span class="badge badge-primary">{{feeling}}</span>
+              <span class="badge badge-success">{{time}}</span>
+              <span class="badge badge-warning">{{cost}}</span>
+              <br />
+              <br />
               <!-- I tried it again button -->
-              <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModalAgain-{{id}}">I tried it again!</button>
+              <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModalAgain-{{id}}" style="width: 8em; background-color: #5cb85c;" >I tried it again!</button>
+              <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample_{{id}}" aria-expanded="false" aria-controls="collapseExample_{{id}}" style="width: 8em; background-color: #428bca;">Reflection</button>
+              
+              <div class="collapse" id="collapseExample_{{id}}">
+                {{#each notes}}
+                  <h5>{{date}}</h5>
+                  <p>{{reflection}}</p>
+                {{/each}}
+              </div>
+              </p>
               
               <!-- pop up dialog -->
               <div class="modal fade" id="reflectionModalAgain-{{id}}" tabindex="-1" role="dialog" aria-labelledby="reflectionModalAgainLabel-{{id}}" aria-hidden="true">
@@ -158,15 +182,6 @@
                 </div>
               </div>
               <!-- I tried it agian button part -->
-
-              <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample_{{id}}" aria-expanded="false" aria-controls="collapseExample_{{id}}">Reflection</button>
-              
-              <div class="collapse" id="collapseExample_{{id}}">
-                {{#each notes}}
-                  <h5>{{date}}</h5>
-                  <p>{{reflection}}</p>
-                {{/each}}
-              </div>
               
 
             </div>
@@ -175,6 +190,7 @@
             {{/ifvalue}}
           {{/ifvalue}}
         {{/each}}
+      </div>
       </div>
     </div>
   </div>

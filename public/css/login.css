@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: #c1bdba;
+  background: #428bca;
   font-family: 'Titillium Web', sans-serif;
 }
 
@@ -21,7 +21,7 @@ a:hover {
 }
 
 .form {
-  background: rgba(19, 35, 47, 0.9);
+  background: #f9f9f9;
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;
@@ -67,8 +67,8 @@ a:hover {
 
 h1 {
   text-align: center;
-  color: #ffffff;
-  font-weight: 300;
+  color: #428bca;
+  font-weight: 600;
   margin: 0 0 40px;
 }
 
@@ -76,7 +76,7 @@ label {
   position: absolute;
   transform: translateY(6px);
   left: 13px;
-  color: rgba(255, 255, 255, 0.5);
+  color: #428bca;
   transition: all 0.25s ease;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
@@ -84,7 +84,7 @@ label {
 }
 label .req {
   margin: 2px;
-  color: #1ab188;
+  color: #428bca;
 }
 
 label.active {
@@ -97,7 +97,7 @@ label.active .req {
 }
 
 label.highlight {
-  color: #ffffff;
+  color: #428bca;
 }
 
 input, textarea {
@@ -108,8 +108,8 @@ input, textarea {
   padding: 5px 10px;
   background: none;
   background-image: none;
-  border: 1px solid #a0b3b0;
-  color: #ffffff;
+  border: 1px solid #428bca;
+  color: black;
   border-radius: 0;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
@@ -147,11 +147,11 @@ textarea {
   outline: none;
   border-radius: 0;
   padding: 15px 0;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #1ab188;
+  background: #428bca;
   color: #ffffff;
   transition: all 0.5s ease;
   -webkit-appearance: none;

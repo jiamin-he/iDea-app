@@ -19,11 +19,6 @@
     <a href="add_new_ideas"><i class="fas fa-plus fa-lg top_right_button"></i></a>
   </div>
 
-  <form class="example" action="/explore">
-    <input type="text" placeholder="Search.." name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
-
   <!-- <nav class="navbar navbar-light bg-faded justify-content-between">
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -52,6 +47,7 @@
       {{#each ideas}}
       <div class="demo__card">
         <div class="demo__card__top {{color}}">
+          <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
           <p class="demo__card__name">{{title}}
             <br/>
             <span class="badge badge-primary">{{feeling}}</span>
@@ -63,7 +59,7 @@
         </div>
         <div class="demo__card__btm">
           <!-- <p class="demo__card__we">{{cost}} - <i class="far fa-clock"></i> {{time}}</p> -->
-          <p class="demo__card__we">{{tried}} tried- {{liked}} liked</p>
+          <p class="demo__card__we"><i class="fas fa-check"></i> {{tried}} tried</p>
         </div>
         <div class="demo__card__top {{color}}">
           <p class="demo__card__name">{{description}}</p>

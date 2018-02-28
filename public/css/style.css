@@ -5,18 +5,15 @@ div.container {
 }
 
 header, footer {
-    padding: 0.5em;
-    color: white;
-    background-color: black;
+    padding: 0.2em;
     clear: left;
-    text-align: center;
 }
 
 .top_menu_bar {
-    padding: 0.5em;
+    padding: 0.1em;
     color: white;
     /*background-color: #e3f2fd;*/
-    background-color: black; 
+    background-color: #428bca; 
     clear: left;
     text-align: center;
     position: relative;
@@ -25,6 +22,7 @@ header, footer {
 body {
   margin:0;
   position:relative;
+  background-color: #f9f9f9;
 }
 
 .status-bar {
@@ -42,13 +40,14 @@ body {
 
 .top_right_button_card {
   position: absolute;
-  top: 1.25em;
+  top: 0.8em;
   right: 1.25em;
 }
 
 .top_menu_bar .top_right_button {
+  color:#ffffff;
   position: absolute;
-  top: 1.25em;
+  top: 0.8em;
   right: 1.25em;
 }
 
@@ -61,11 +60,12 @@ body {
   left:auto!important;
   right:auto!important;
   width: calc(100% - 30px);
+  color:#ffd747;
 }
 
 .icon-bar {
     width: calc(100% - 30px);
-    background-color: #555;
+    background-color: #428bca;
     overflow: auto;
 }
 
@@ -73,7 +73,7 @@ body {
     float: left;
     width: 25%;
     text-align: center;
-    padding: 0.5em 0;
+    padding: 0.1em 0;
     transition: all 0.3s ease;
     color: white;
     font-size: 2em;
@@ -193,7 +193,7 @@ form.example button {
     float: left;
     width: 20%;
     padding: 10px;
-    background: #000000;
+    background: #ff7272;
     color: white;
     font-size: 17px;
     border: 1px solid grey;
@@ -209,4 +209,9 @@ form.example::after {
     clear: both;
     display: table;
 }
-  
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

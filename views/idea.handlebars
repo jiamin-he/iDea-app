@@ -3,26 +3,24 @@
 <html>
 <head>
 	<meta charset="utf-8">
+  <link rel="stylesheet" href="/css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	
-	<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="../css/idea.css"> 
-</head>
+
 
 <body>
 	<div class="container-fluid" >
-
+   <div class="top_menu_bar" style="background-color: #5cb85c;"><h1>Idea Detail</h1>
 		<!-- friends' updates -->
 		
-        <div class="card">
+        <div style="text-align: center;">
             <a href="javascript:window.history.back()" class="btn btn-primary"><i class="fas fa-chevron-circle-left"></i></a>
             <a href="/explore" class="btn btn-primary"><i class="fas fa-globe"></i></a>
             <a href="/mylist" class="btn btn-primary"><i class="fas fa-file-alt"></i></a>
             <!-- <a href="#" class="btn btn-primary" id="thumbs-up"><i class="fas fa-thumbs-up"></i></a> -->
 
         	<!-- add comment/reflection button -->
-              <button href="#" class="btn btn-primary" id="tried-{{idea.id}}" data-toggle="modal" data-target="#reflection-{{idea.id}}"><i class="fas fa-pencil-alt"></i>Add reflections</button>
+              <button href="#" class="btn btn-primary" id="tried-{{idea.id}}" data-toggle="modal" data-target="#reflection-{{idea.id}}" ><i class="fas fa-pencil-alt"></i>Add reflections</button>
               
               <!-- pop up dialog -->
               <div class="modal fade" id="reflection-{{idea.id}}" tabindex="-1" role="dialog" aria-labelledby="reflectionLabel-{{idea.id}}" aria-hidden="true">
@@ -66,9 +64,74 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
               <!-- add comment/reflection button part -->
 
-        	<div class="content">
+<div>
+  </div> <div class="tab-content container" data-spy="scroll">
+    <div class="tab-pane fade show active" id="newest" role="tabpanel" aria-labelledby="newestSort">
+      <br />
+        <div class="card-columns">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card" style="background-color: #5cb85c">
+                  <div class="card-body">
+                  <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{idea.feeling}}.png" alt="Card image cap">
+                  <h5 class="card-title" style="text-align: center;">{{idea.title}}</a></h5>
+                  
+
+              
+                  <p class="card-text" style="text-align: center;">{{idea.description}}
+                  <br />
+                  <br />
+                  <span class="badge badge-primary">{{idea.feeling}}</span>
+                  <span class="badge badge-success">{{idea.time}}</span>
+                  <span class="badge badge-warning">{{idea.cost}}</span></p>
+
+              
+                    <!-- <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p> -->
+                </div>
+                  <div class="card-footer">
+                        <small class="text-muted"><i class="fas fa-check"></i>  {{idea.tried}} people tried this idea.</small>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <h3 style="text-align: center;">Reflection</h3>
+      {{#each idea.notes}}
+
+            {{#ifvalue property desired="public"}} 
+            <div class="card" style="height:15%;background: #d4e157; font-size: 1em;line-height: 0.8;">
+              <br />
+              <p style="text-align: left;">{{provider}}</p>
+              <p style="text-align: left; font-size: 0.7em;">{{date}}</p>
+              <p style="text-align: left;"><i class="far fa-comments"></i>   {{reflection}}</p>
+            </div>
+            {{/ifvalue}}
+
+            {{/each}}
+  </div>
+
+     <!--  <div class="tab-content container" data-spy="scroll">
+        <div class="row">
+          <div class="card">
+            <div class="col-sm-6">
+              <div class="card-body">
+              <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{idea.feeling}}.png" alt="Card image cap">
+              <h5 class="card-title" style="text-align: center;color: #428bca;">{{idea.title}}</a></h5>
+              <p class="card-text" style="text-align: center;color: #428bca;">{{idea.feeling}}
+              <br />
+              <br />
+              <span class="badge badge-primary">{{idea.feeling}}</span>
+              <span class="badge badge-success">{{idea.time}}</span>
+              <span class="badge badge-warning">{{idea.cost}}</span></p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div> -->
+        	<!-- <div class="content">
         		<div class="post main" style="height:20%;background: #ef5350;">
         			<p>{{idea.title}}</p>
         		</div>
@@ -120,7 +183,7 @@
 			    </div>
 		   </div>
 
-        </div>
+        </div> -->
 		
 
 		<footer></footer>

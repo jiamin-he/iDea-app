@@ -18,11 +18,6 @@
     <a href="add_new_ideas"><i class="fas fa-plus fa-lg top_right_button"></i></a>
   </div>
 
-  <form class="example" action="/explore">
-    <input type="text" placeholder="Search.." name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
-
   <!-- <nav class="navbar navbar-light bg-faded justify-content-between">
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="text" placeholder="Search">
@@ -47,68 +42,66 @@
     </li>
   </ul>
 
-
 <div>
-
   <div class="tab-content container" data-spy="scroll">
 
     <div class="tab-pane fade show active" id="newest" role="tabpanel" aria-labelledby="newestSort">
+      <br />
+      <div class="card-columns">
+        <div class="row">
+          {{#each ideas}}
+            {{#ifvalue property desired="public"}}
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
+                <h5 class="card-title" style="text-align: center;"><a href="idea/{{id}}">{{title}}</a></h5>
+              
 
-    <div class="row">
-    {{#each ideas}}
-        {{#ifvalue property desired="public"}}
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-              <h5 class="card-title"><a href="idea/{{id}}">{{title}}</a></h5>
-              <span class="badge badge-primary">{{feeling}}</span>
-              <span class="badge badge-success">{{time}}</span>
-              <span class="badge badge-warning">{{cost}}</span>
+                {{#ifvalue myList desired="true"}}              
+                <a href="/add_to_my_list/explore/{{id}}" class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a>
+                <!-- <a class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a> -->
 
-              {{#ifvalue myList desired="true"}}              
-              <a href="/add_to_my_list/explore/{{id}}" class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a>
-              <!-- <a class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a> -->
+            {{/ifvalue}}
 
-              {{/ifvalue}}
-
-              {{#ifvalue myList desired="false"}}              
+            {{#ifvalue myList desired="false"}}              
               <a href="/add_to_my_list/explore/{{id}}" class=" top_right_button_card" ><i class="fas fa-plus fa-lg"></i></a>
               <!-- <a class=" top_right_button_card" ><i class="fas fa-plus fa-lg"></i></a> -->
 
-              {{/ifvalue}}
+            {{/ifvalue}}
 
-              <p class="card-text">{{description}}</p>
+              <p class="card-text" style="text-align: center;">{{description}}
+              <br />
+              <br />
+              <span class="badge badge-primary">{{feeling}}</span>
+              <span class="badge badge-success">{{time}}</span>
+              <span class="badge badge-warning">{{cost}}</span></p>
 
-              <p class = "card-text"> 
-                <i class="fas fa-calendar"></i>Created on {{createTime}} by {{provider}}.
-                <br/>
-                <i class="fas fa-heart"></i>{{liked}} people liked this idea.
-                <br/>
-                <i class="fas fa-check"></i>{{tried}} people tried this idea.
-              </p>
+              
               <!-- <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p> -->
             </div>
+            <div class="card-footer">
+                  <small class="text-muted"><i class="fas fa-check"></i>  {{tried}} people tried this idea.</small>
+            </div>
           </div>
-          </div>
-
+         </div>
         {{/ifvalue}}
       {{/each}}
     </div>
     </div>
+  </div>
 
   <div class="tab-pane fade" id="trending" role="tabpanel" aria-labelledby="trendingSort">
-    
+     <br />
+     <div class="card-columns">
     <div class="row">
     {{#each ideas2}}
         {{#ifvalue property desired="public"}}
           <div class="col-sm-6">
             <div  class="card">
               <div class="card-body">
-              <h5 class="card-title"><a href="idea/{{id}}" >{{title}}</a></h5>
-              <span class="badge badge-primary">{{feeling}}</span>
-              <span class="badge badge-success">{{time}}</span>
-              <span class="badge badge-warning">{{cost}}</span>
-
+              <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
+              <h5 class="card-title" style="text-align: center;"><a href="idea/{{id}}" >{{title}}</a></h5>
               {{#ifvalue myList desired="true"}}              
               <a href="/add_to_my_list/explore/{{id}}" class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a>
               <!-- <a class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a> -->
@@ -120,15 +113,17 @@
               <!-- <a class=" top_right_button_card" ><i class="fas fa-plus fa-lg"></i></a> -->
 
               {{/ifvalue}}
-
-              <p class = "card-text"> 
-                <i class="fas fa-check"></i>{{tried}} people tried this idea.
-                <br/>
-                <i class="fas fa-heart"></i>{{liked}} people liked this idea.
-                <br/>
-                <i class="fas fa-calendar"></i>Created on {{createTime}} by {{provider}}.
-              </p>
+              <p class="card-text" style="text-align: center;">{{description}}
+              <br />
+              <br />
+              <span class="badge badge-primary">{{feeling}}</span>
+              <span class="badge badge-success">{{time}}</span>
+              <span class="badge badge-warning">{{cost}}</span></p>
+               
               <!-- <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p> -->
+            </div>
+            <div class="card-footer">
+                  <small class="text-muted"><i class="fas fa-check"></i>  {{tried}} people tried this idea.</small>
             </div>
           </div>
         </div>
@@ -139,7 +134,7 @@
   </div>
 </div>
 
-    <div class="icon-bar fixed-bottom">
+  <div class="icon-bar fixed-bottom">
 
     {{#each bottom-bar}}
     
@@ -151,7 +146,6 @@
     </div>
 
 </div>
-
   
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
