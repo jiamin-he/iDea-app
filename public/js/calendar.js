@@ -352,6 +352,11 @@ function initializePage() {
     { eventName: 'Productive - 3', calendar: 'Productive', color: 'yellow' },
     { eventName: 'Productive - 4', calendar: 'Productive', color: 'yellow' },
 
+    { eventName: 'Charitable - 1', calendar: 'Charitable', color: 'red' },
+    { eventName: 'Charitable - 2', calendar: 'Charitable', color: 'red' },
+    { eventName: 'Charitable - 3', calendar: 'Charitable', color: 'red' },
+    { eventName: 'Charitable - 4', calendar: 'Charitable', color: 'red' },
+
     { eventName: 'Adventurous - 1', calendar: 'Adventurous', color: 'green' },
     { eventName: 'Adventurous - 2', calendar: 'Adventurous', color: 'green' },
     { eventName: 'Adventurous - 3', calendar: 'Adventurous', color: 'green' },

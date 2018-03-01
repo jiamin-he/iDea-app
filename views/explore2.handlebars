@@ -34,21 +34,22 @@
   </div> -->
 
 
-  <ul class="nav nav-pills nav-justified nav-tabs" role="tablist" id="nav">
+  <!-- <ul class="nav nav-pills nav-justified nav-tabs" role="tablist" id="nav">
     <li class="nav-item">
       <a class="nav-link active" id="newestSort" data-toggle="tab" href="#newest" role="tab" aria-controls="newest" aria-selected="true">Newest</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="trendingSort" data-toggle="tab" href="#trending" role="tab" aria-controls="trending" aria-selected="false">Trending</a>
     </li>
-  </ul>
+  </ul> -->
 
   <div class="demo">
       {{#each ideas}}
+      {{#ifvalue property desired="public"}}
       <div class="demo__card">
         <div class="demo__card__top {{color}}">
           <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
-          <p class="demo__card__name">{{title}}
+          <p class="demo__card__name">{{title}} {{id}}
             <br/>
             <span class="badge badge-primary">{{feeling}}</span>
               <span class="badge badge-success">{{time}}</span>
@@ -58,7 +59,6 @@
 
         </div>
         <div class="demo__card__btm">
-          <!-- <p class="demo__card__we">{{cost}} - <i class="far fa-clock"></i> {{time}}</p> -->
           <p class="demo__card__we"><i class="fas fa-check"></i> {{tried}} tried</p>
         </div>
         <div class="demo__card__top {{color}}">
@@ -68,21 +68,9 @@
         <div class="demo__card__choice m--like"></div>
         <div class="demo__card__drag"></div>
       </div>
+      {{/ifvalue}}
       {{/each}}
 </div>
-  
-    <!-- new bottom bar. better bootstrap -->
-    <!-- <nav class="navbar navbar-light fixed-bottom" style="background-color: #e3f2fd;">
-
-    {{#each bottom-bar}}
-    
-      <a href="/{{name}}" ><i class="{{class}}"></i>
-      </a>
-    
-    {{/each}}
-    </nav> -->
-
-    <!-- <span class="badge badge-pill badge-info status-bar">The idea has been added to my list.</span> -->
 
     <nav class="icon-bar fixed-bottom">
 

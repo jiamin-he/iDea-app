@@ -10,12 +10,13 @@ body {
 }
 .demo {
   position: absolute;
-  left: 71%;
-  top: 550%;
-  width: 21rem;
+  /*left: 71%;*/
+  /*top: 550%;*/
+  top:125%;
+  width: calc(100% - 30px);
   height: 54rem;
-  margin-left: -15.3rem;
-  margin-top: -27rem;
+  /*margin-left: -15.3rem;*/
+  /*margin-top: -27rem;*/
   background: #f6f6f5;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
@@ -26,14 +27,14 @@ body {
 .demo__content {
   overflow: hidden;
   position: relative;
-  height: 48rem;
+  height: 30rem;
   padding-top: 4.5rem;
   user-select: none;
 }
 .demo__card-cont {
   position: relative;
   width: 24rem;
-  height: 32rem;
+  height: 20rem;
   margin: 0 auto 5rem;
 }
 .demo__card {

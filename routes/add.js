@@ -12,7 +12,7 @@ exports.addIdeas = function(req, res){
   var randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
   var uniqid = randLetter + Date.now();
   var newIdea = {
-  	  "name":req.query.provider,
+  	  "name":"lalala",
       "id": uniqid,
       "title" : req.query.title,
       "tried": req.query.user_tried == 1?"1":"0",
@@ -23,7 +23,7 @@ exports.addIdeas = function(req, res){
       "operationTime": date.toString(),
       "property": req.query.add_to == 1?"public":"private",
       "userTried": req.query.user_tried == 1?"true":"false",
-      "feeling": "advanturous",
+      "feeling": req.query.category,
       "date":"",
       "reflection": "",
       "eventName": "Adventurous - 1", 
@@ -31,8 +31,8 @@ exports.addIdeas = function(req, res){
       "color": "pink",
       "myList": "true",
       "notes": [],
-      "cost": "$$",
-      "time": "minutes",
+      "cost": req.query.cost,
+      "time": req.query.time,
       "comments": [{"data": "1519265609445" ,"comment": "good idea!"}]
   };
   // console.log(newIdea);
