@@ -76,3 +76,17 @@ exports.quicklyAdd = function(req, res){
   if(stayPage == "explore") res.redirect('/explore');
   else res.redirect('myList');
 };
+
+exports.quicklyAdd2 = function(req,res){
+  var cur = req.body.id;
+  // console.log(cur);
+  for(i in data.ideas) {
+    if(data.ideas[i].id == cur) {
+      data.ideas[i].myList = "true";
+      var temp = new Date();
+      data.ideas[i].operationTime = temp.toString();
+      break;
+    }
+  }
+  res.send(data);
+}

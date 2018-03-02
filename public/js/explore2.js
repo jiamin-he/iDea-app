@@ -26,10 +26,17 @@ $(document).ready(function() {
     $cardLike.css("opacity", likeOpacity);
   };
 
+  function postCallback(res){
+    
+  }
+
   function release() {
 
     if (pullDeltaX >= decisionVal) {
       $card.addClass("to-right");
+      var id = $card.attr('id');
+      // console.log(id);
+      $.post('add_to_my_list', {id: id}, postCallback);
     } else if (pullDeltaX <= -decisionVal) {
       $card.addClass("to-left");
     }

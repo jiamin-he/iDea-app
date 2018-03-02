@@ -65,7 +65,7 @@ function initializePage() {
     // produce random dates for each event.
     this.events.forEach(function(ev) {
      ev.date = self.current.clone().date(Math.random() * (29 - 1) + 1);
-     console.log(ev.date);
+     // console.log(ev.date);
     });
     
     
@@ -195,8 +195,26 @@ function initializePage() {
 
     //Check to see if there is an open detais box on the current row
     if(currentOpened && currentOpened.parentNode === el.parentNode) {
-      details = currentOpened;
-      arrow = document.querySelector('.arrow');
+      
+      if(currentOpened.id == dayNumber) {
+        currentOpened.addEventListener('webkitAnimationEnd', function() {
+          currentOpened.parentNode.removeChild(currentOpened);
+        });
+        currentOpened.addEventListener('oanimationend', function() {
+          currentOpened.parentNode.removeChild(currentOpened);
+        });
+        currentOpened.addEventListener('msAnimationEnd', function() {
+          currentOpened.parentNode.removeChild(currentOpened);
+        });
+        currentOpened.addEventListener('animationend', function() {
+          currentOpened.parentNode.removeChild(currentOpened);
+        });
+        currentOpened.className = 'details out';
+      } else {
+        details = currentOpened;
+        arrow = document.querySelector('.arrow');
+      }
+      
     } else {
       //Close the open events on differnt week row
       //currentOpened && currentOpened.parentNode.removeChild(currentOpened);
@@ -217,7 +235,7 @@ function initializePage() {
       }
 
       //Create the Details Container
-      details = createElement('div', 'details in');
+      details = createElement('div', 'details in', '', dayNumber);
 
       //Create the arrow
       var arrow = createElement('div', 'arrow');
@@ -317,13 +335,16 @@ function initializePage() {
 
   window.Calendar = Calendar;
 
-  function createElement(tagName, className, innerText) {
+  function createElement(tagName, className, innerText,id) {
     var ele = document.createElement(tagName);
     if(className) {
       ele.className = className;
     }
     if(innerText) {
       ele.innderText = ele.textContent = innerText;
+    }
+    if(id){
+      ele.id = id;
     }
     return ele;
   }
@@ -362,9 +383,6 @@ function initializePage() {
     { eventName: 'Adventurous - 3', calendar: 'Adventurous', color: 'green' },
     { eventName: 'Adventurous - 4', calendar: 'Adventurous', color: 'green' }
   ];
-
-  // var data = require('../update.json');
-  // var data = require(['../../update.json']);
 
   function addDate(ev) {
     

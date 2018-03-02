@@ -100,6 +100,7 @@ app.get('/surprise_list', surprise_list.view);
 
 // Quickly add to my list tab
 app.get('/add_to_my_list/:stayPage/:id', add.quicklyAdd);
+app.post('/add_to_my_list', add.quicklyAdd2);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -21,6 +21,6 @@ exports.defaultView = function(req, res){
 };
 
 exports.altView = function(req, res){
-  console.log(data);
+  // console.log(data);
   res.render('explore2',data);
 }

@@ -19,7 +19,8 @@ body {
  color: rgba(255, 255, 255, 1);
  margin: 0;
  padding: 0;
- background: #4A4A4A;
+ /*background: #4A4A4A;*/
+ background: #428bca;
  -webkit-touch-callout: none;
  -webkit-user-select: none;
  -khtml-user-select: none;
@@ -43,7 +44,8 @@ body {
   height: 50px;
   /*width: 420px;*/
   width: 100%;
-  background: rgba(66, 66, 66, 1);
+  /*background: rgba(66, 66, 66, 1);*/
+  background: #428bca;
   text-align: center;
   position:relative;
   z-index: 100;
@@ -70,13 +72,13 @@ body {
 
 .left {
   border-width: 7.5px 10px 7.5px 0;
-  border-color: transparent rgba(160, 159, 160, 1) transparent transparent;
+  border-color: transparent #bbd5ec transparent transparent;
   left: 20px;
 }
 
 .right {
   border-width: 7.5px 0 7.5px 10px;
-  border-color: transparent transparent transparent rgba(160, 159, 160, 1);
+  border-color: transparent transparent transparent #bbd5ec;
   right: 20px;
 }
 
@@ -119,18 +121,20 @@ body {
 }
 
 .week {
- background: #4A4A4A;
+ /*background: #4A4A4A;*/
+ background: #275d8b;
 }
 
 .day {
   display: inline-block;
   /*width: 60px;*/
   width: 14%;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
   vertical-align: top;
   cursor: pointer;
-  background: #4A4A4A;
+  /*background: #4A4A4A;*/
+  background: #275d8b;
   position: relative;
   z-index: 100;
 }
@@ -185,9 +189,9 @@ body {
 
 .details {
   position: relative;
-  width: 420px;
+  width: 100%;
   height: 75px;
-  background: rgba(164, 164, 164, 1);
+  background: #bbd5ec;
   margin-top: 5px;
   border-radius: 4px;
 }
@@ -213,7 +217,7 @@ body {
   height: 0px;
   border-style: solid;
   border-width: 0 5px 5px 5px;
-  border-color: transparent transparent rgba(164, 164, 164, 1) transparent;
+  border-color: transparent transparent #bbd5ec transparent;
   transition: all 0.7s ease;
 }
 
@@ -257,7 +261,7 @@ body {
 }
 
 .event.empty {
-  color: #eee;
+  color: #bbd5ec;
 }
 
 .event-category {
@@ -278,7 +282,7 @@ body {
   bottom: 10px;
   width: 100%;
   height: 30px;
-  background: rgba(60, 60, 60, 1);
+  background: #275d8b;
   line-height: 30px;
 
 }
@@ -403,14 +407,15 @@ body {
 <body>
 
 	<div class="container-fluid">
-		<header><h1>Calendar</h1></header>
+		<div class="top_menu_bar"><h1>Calendar</h1>
+  </div>
 		
 		<div id="calendar"></div>
         <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
 		
 		
 		<!-- bottom bar -->
-		<div class="icon-bar fixed-bottom" style="background-color: #4A4A4A">
+		<div class="icon-bar fixed-bottom" style="background-color: #428bca">
 		{{#each bottom-bar}}
 		
 			<a href="/{{name}}" ><i class="{{class}}"></i>
