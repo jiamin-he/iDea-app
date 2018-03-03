@@ -355,6 +355,8 @@ function initializePage() {
   // $.get( "/hi", function( data1 ) {
   //   console.log(data1);
   // });
+  var curStorage = window.localStorage;
+  console.log(curStorage);
 
   var data = [
     { eventName: 'Stress-relieving - 1', calendar: 'Stress-relieving', color: 'orange' },

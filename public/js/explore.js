@@ -10,6 +10,7 @@ $(document).ready(function() {
 	})
 
 function initializePage() {
+    
 }
 
 function postCallback(res){
