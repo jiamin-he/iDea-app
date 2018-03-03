@@ -21,8 +21,8 @@ exports.addIdeas = function(req, res){
       "imageURL": "",
       "createTime": date.toString(),
       "operationTime": date.toString(),
-      "property": req.query.add_to == 1?"public":"private",
-      "userTried": req.query.user_tried == 1?"true":"false",
+      "property": req.query.add_to,
+      "userTried": req.query.user_tried,
       "feeling": req.query.category,
       "date":"",
       "reflection": "",
@@ -35,9 +35,13 @@ exports.addIdeas = function(req, res){
       "time": req.query.time,
       "comments": [{"data": "1519265609445" ,"comment": "good idea!"}]
   };
-  // console.log(newIdea);
+  console.log(newIdea);
   data.ideas.unshift(newIdea);
-  if(newIdea.property == "public") res.redirect('/explore');//res.render("explore",data);
+
+  if(newIdea.property == "public") {
+    res.redirect('/explore');
+    // res.render("explore",data); 
+  }
   else if(newIdea.userTried == "true") {
     res.redirect('/mylist');
     // res.render("mylist",data);
@@ -83,6 +87,20 @@ exports.quicklyAdd2 = function(req,res){
   for(i in data.ideas) {
     if(data.ideas[i].id == cur) {
       data.ideas[i].myList = "true";
+      var temp = new Date();
+      data.ideas[i].operationTime = temp.toString();
+      break;
+    }
+  }
+  res.send(data);
+}
+
+exports.quicklyDelete = function(req,res){
+  var cur = req.body.id;
+  // console.log(cur);
+  for(i in data.ideas) {
+    if(data.ideas[i].id == cur) {
+      data.ideas[i].myList = "false";
       var temp = new Date();
       data.ideas[i].operationTime = temp.toString();
       break;

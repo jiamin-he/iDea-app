@@ -15,7 +15,9 @@
   <!-- try use "card" in bootstrap here. -->
 
   <div class="top_menu_bar"><h1>Explore</h1>
-    <a href="add_new_ideas"><i class="fas fa-plus fa-lg top_right_button"></i></a>
+    <a href="add_new_ideas">
+      <i class="fas fa-plus fa-lg top_right_button"></i>
+    </a>
   </div>
 
   <!-- <nav class="navbar navbar-light bg-faded justify-content-between">
@@ -51,31 +53,34 @@
         <div class="row">
           {{#each ideas}}
             {{#ifvalue property desired="public"}}
-            <div class="col-sm-6">
+            {{#ifvalue userTried desired="false"}} 
+            {{#ifvalue myList desired="false"}} 
+            <div class="col-sm-6" id="block-newest-{{id}}">
               <div class="card">
                 <div class="card-body">
                 <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
-                <h5 class="card-title" style="text-align: center;"><a href="idea/{{id}}">{{title}}</a></h5>
+                <h5 class="card-title capitalize" style="text-align: center;"><a href="idea/{{id}}">{{title}}</a></h5>
               
 
-                {{#ifvalue myList desired="true"}}              
-                <a href="/add_to_my_list/explore/{{id}}" class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a>
+                <!-- {{#ifvalue myList desired="true"}}              
+                <a href="/add_to_my_list/explore/{{id}}" class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a> -->
                 <!-- <a class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a> -->
 
-            {{/ifvalue}}
+                <!-- {{/ifvalue}} -->
 
-            {{#ifvalue myList desired="false"}}              
-              <a href="/add_to_my_list/explore/{{id}}" class=" top_right_button_card" ><i class="fas fa-plus fa-lg"></i></a>
+                         
+              <a href="/add_to_my_list/explore/{{id}}" class=" top_right_button_card" id="top_right_button_newest_{{id}}"><i class="fas fa-plus fa-lg"></i></a>
               <!-- <a class=" top_right_button_card" ><i class="fas fa-plus fa-lg"></i></a> -->
 
-            {{/ifvalue}}
+            
 
               <p class="card-text" style="text-align: center;">{{description}}
               <br />
               <br />
-              <span class="badge badge-primary">{{feeling}}</span>
-              <span class="badge badge-success">{{time}}</span>
-              <span class="badge badge-warning">{{cost}}</span></p>
+              <a href="/surprise_list/feeling/{{feeling}}"><span class="badge badge-primary">{{feeling}}</span></a>
+              <a href="/surprise_list/time/{{time}}"><span class="badge badge-success">{{time}}</span></a>
+              <a href="/surprise_list/cost/{{cost}}"><span class="badge badge-warning">{{cost}}</span></a>
+              </p>
 
               
               <!-- <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p> -->
@@ -85,6 +90,8 @@
             </div>
           </div>
          </div>
+         {{/ifvalue}}
+         {{/ifvalue}}
         {{/ifvalue}}
       {{/each}}
     </div>
@@ -97,22 +104,24 @@
     <div class="row">
     {{#each ideas2}}
         {{#ifvalue property desired="public"}}
-          <div class="col-sm-6">
+        {{#ifvalue userTried desired="false"}} 
+          <div class="col-sm-6" id="block-trending-{{id}}">
             <div  class="card">
               <div class="card-body">
               <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
-              <h5 class="card-title" style="text-align: center;"><a href="idea/{{id}}" >{{title}}</a></h5>
-              {{#ifvalue myList desired="true"}}              
-              <a href="/add_to_my_list/explore/{{id}}" class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a>
+              <h5 class="card-title capitalize" style="text-align: center;"><a href="idea/{{id}}" >{{title}}</a></h5>
+
+              <!-- {{#ifvalue myList desired="true"}}              
+              <a href="/add_to_my_list/explore/{{id}}" class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a> -->
               <!-- <a class=" top_right_button_card" ><i class="fas fa-minus fa-lg"></i></a> -->
 
-              {{/ifvalue}}
+              <!-- {{/ifvalue}} -->
 
-              {{#ifvalue myList desired="false"}}              
-              <a href="/add_to_my_list/explore/{{id}}" class=" top_right_button_card" ><i class="fas fa-plus fa-lg"></i></a>
+                           
+              <a href="/add_to_my_list/explore/{{id}}" class=" top_right_button_card" id="top_right_button_trending_{{id}}"><i class="fas fa-plus fa-lg"></i></a>
               <!-- <a class=" top_right_button_card" ><i class="fas fa-plus fa-lg"></i></a> -->
 
-              {{/ifvalue}}
+              
               <p class="card-text" style="text-align: center;">{{description}}
               <br />
               <br />
@@ -127,6 +136,7 @@
             </div>
           </div>
         </div>
+        {{/ifvalue}}
         {{/ifvalue}}
       {{/each}}
     </div>
@@ -149,6 +159,7 @@
   
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="/js/explore.js"></script>

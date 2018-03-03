@@ -22,9 +22,9 @@
   </div>
     
     <div>
-    {{#each option}}
-    <span class="badge {{class}}">{{name}}</span>
-    {{/each}}
+    
+    <span class="badge {{class}}">{{value}}</span>
+    
   </div>
 
 
@@ -35,8 +35,8 @@
   <div class="card-columns">
      <br />
       <div class="row">
-        {{#each all}}
-
+        {{#each ideas}}
+            {{#ifvalue property desired="public"}}
             {{#ifvalue userTried desired="false"}}
             {{#ifvalue myList desired="false"}} 
 
@@ -44,7 +44,7 @@
           <div class="card" >
             <div class="card-body">
               <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
-              <h5 class="card-title capitalize" style="text-align: center;"><a href="idea/{{id}}">{{title}}</a></h5>
+              <h5 class="card-title capitalize" style="text-align: center;"><a href="/idea/{{id}}">{{title}}</a></h5>
               <p class="card-text" style="text-align: center;">{{description}}
               <br />
               <br />
@@ -72,16 +72,12 @@
           </div>
         </div>
         {{/ifvalue}}
-            {{/ifvalue}}
-
+        {{/ifvalue}}
+        {{/ifvalue}}
         {{/each}}
       </div>
     </div>
   
-  <!-- surprise me again -->
-  <div class="fixed-second-bottom">
-    <a href="/surprise"><i class="fas fa-sync-alt fa-lg"></i> Surprise Me Again ! </a>
-  </div>
   
   <!-- bottom bar -->
     <div class="icon-bar fixed-bottom">

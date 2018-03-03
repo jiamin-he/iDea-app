@@ -97,10 +97,14 @@ app.get('/add', add.addIdeas);
 
 // Surprise Me New List tabs
 app.get('/surprise_list', surprise_list.view);
+app.get('/surprise_list/:filter/:value', surprise_list.badge);
 
 // Quickly add to my list tab
 app.get('/add_to_my_list/:stayPage/:id', add.quicklyAdd);
 app.post('/add_to_my_list', add.quicklyAdd2);
+
+// delete ideas from my list tab
+app.post('/delete_from_my_list', add.quicklyDelete);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

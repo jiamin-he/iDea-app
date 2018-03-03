@@ -11,9 +11,11 @@
 <body>
 
 <div class="container-fluid ">
-		<div class="top_menu_bar"><h1>Surprise Me</h1>
+		<div class="top_menu_bar">
+		<a href="javascript:window.history.back()"><i class="fas fa-chevron-circle-left fa-lg leftmost" style="color: white;"></i></a>
+			<h1>Surprise Me</h1>
   		</div>
-  		<a href="javascript:window.history.back()"><i class="fas fa-chevron-circle-left"></i></a>
+  		
        <div class =“container” > 
 		<form role="form" method="get" action="/surprise_list">
 			<fieldset class="form-group">
@@ -75,6 +77,18 @@
 			            days
 			          </label>
 			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="time" id="months" value="months">
+			          <label class="form-check-label" for="months">
+			            months
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="time" id="years" value="years">
+			          <label class="form-check-label" for="years">
+			            years
+			          </label>
+			        </div>
 			      </div>
 			    </div>
 
@@ -82,6 +96,12 @@
 			    <div class="row">
 			      <legend class="col-form-label col-sm-2 pt-0">How much money do you want to spend?</legend>
 			      <div class="col-sm-10">
+			      	<div class="form-check">
+			          <input class="form-check-input" type="radio" name="cost" id="$0" value="$0">
+			          <label class="form-check-label" for="$0">
+			            $0
+			          </label>
+			        </div>
 			        <div class="form-check">
 			          <input class="form-check-input" type="radio" name="cost" id="$" value="$">
 			          <label class="form-check-label" for="$">
@@ -98,6 +118,12 @@
 			          <input class="form-check-input" type="radio" name="cost" id="$$$" value="$$$" checked>
 			          <label class="form-check-label" for="$$$">
 			            $$$
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="cost" id="$$$$" value="$$$$">
+			          <label class="form-check-label" for="$$$$">
+			            $$$$
 			          </label>
 			        </div>
 			      </div>

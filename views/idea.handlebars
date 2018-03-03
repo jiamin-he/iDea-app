@@ -10,17 +10,20 @@
 
 <body>
 	<div class="container-fluid" >
-   <div class="top_menu_bar" style="background-color: #5cb85c;"><h1>Idea Detail</h1>
+   <div class="top_menu_bar" >
+    <div>
+    <a href="javascript:window.history.back()" ><i class="fas fa-chevron-circle-left fa-lg leftmost" style="color: white;"></i></a>
+    <h1>Idea Detail</h1>
+    </div>
 		<!-- friends' updates -->
 		
         <div style="text-align: center;">
-            <a href="javascript:window.history.back()" class="btn btn-primary"><i class="fas fa-chevron-circle-left"></i></a>
-            <a href="/explore" class="btn btn-primary"><i class="fas fa-globe"></i></a>
-            <a href="/mylist" class="btn btn-primary"><i class="fas fa-file-alt"></i></a>
+            
+            <!-- <a href="/explore" class="btn btn-primary"><i class="fas fa-globe"></i></a>
+            <a href="/mylist" class="btn btn-primary"><i class="fas fa-file-alt"></i></a> -->
             <!-- <a href="#" class="btn btn-primary" id="thumbs-up"><i class="fas fa-thumbs-up"></i></a> -->
 
-        	<!-- add comment/reflection button -->
-              <button href="#" class="btn btn-primary" id="tried-{{idea.id}}" data-toggle="modal" data-target="#reflection-{{idea.id}}" ><i class="fas fa-pencil-alt"></i>Add reflections</button>
+        	
               
               <!-- pop up dialog -->
               <div class="modal fade" id="reflection-{{idea.id}}" tabindex="-1" role="dialog" aria-labelledby="reflectionLabel-{{idea.id}}" aria-hidden="true">
@@ -78,16 +81,18 @@
                 <div class="card" style="background-color: #5cb85c">
                   <div class="card-body">
                   <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{idea.feeling}}.png" alt="Card image cap">
-                  <h5 class="card-title" style="text-align: center;">{{idea.title}}</a></h5>
+                  <h5 class="card-title capitalize" style="text-align: center;">{{idea.title}}</a></h5>
                   
 
               
                   <p class="card-text" style="text-align: center;">{{idea.description}}
                   <br />
                   <br />
-                  <span class="badge badge-primary">{{idea.feeling}}</span>
-                  <span class="badge badge-success">{{idea.time}}</span>
-                  <span class="badge badge-warning">{{idea.cost}}</span></p>
+                  <a href="/surprise_list/feeling/{{idea.feeling}}"><span class="badge badge-primary">{{idea.feeling}}</span></a>
+                  <a href="/surprise_list/time/{{idea.time}}"><span class="badge badge-success">{{idea.time}}</span></a>
+                  <a href="/surprise_list/cost/{{idea.cost}}"><span class="badge badge-warning">{{idea.cost}}</span></a>
+                  </p>
+
 
               
                     <!-- <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p> -->
@@ -98,7 +103,13 @@
               </div>
           </div>
       </div>
-      <h3 style="text-align: center;">Reflection</h3>
+
+      <h3 style="text-align: center;">
+      Reflection
+      <!-- add comment/reflection button -->
+              <button href="#" class="btn btn-primary" id="tried-{{idea.id}}" data-toggle="modal" data-target="#reflection-{{idea.id}}" ><i class="fas fa-pencil-alt"></i><!-- Add reflections --></button>
+      </h3>
+
       {{#each idea.notes}}
 
             {{#ifvalue property desired="public"}} 
@@ -184,12 +195,19 @@
 		   </div>
 
         </div> -->
-		
-
-		<footer></footer>
 		</div>
-
 	</div>
+
+        <div class="icon-bar fixed-bottom">
+
+        {{#each bottom-bar}}
+        
+          <a href="/{{name}}" ><i class="{{class}}"></i>
+            <!-- <p>{{name}}</p> -->
+          </a>
+        
+        {{/each}}
+        </div>
 
 	
 	<!-- <script src="https://code.jquery.com/jquery.js"></script> -->
@@ -201,7 +219,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-
     <script src="/js/idea.js"></script>
 </body>
 </html>

@@ -10,6 +10,16 @@ exports.view = function(req, res){
     var dateB = new Date(b.operationTime);
     return dateB.valueOf() - dateA.valueOf();
   })
+  var toTry = 0, tried = 0;
+  for(i in data.ideas){
+    if(data.ideas[i].myList == "true" && data.ideas[i].userTried == "true")
+      tried++;
+    if(data.ideas[i].myList == "true" && data.ideas[i].userTried == "false")
+      toTry++;
+  }
+  data["toTry"] = toTry;
+  data["tried"] = tried;
+  // console.log(data);
   res.render('mylist',data);
 };
 

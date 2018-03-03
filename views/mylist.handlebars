@@ -7,6 +7,7 @@
   <meta charset="UTF-8">
   <title>My list</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/myListAnimation.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -24,10 +25,10 @@
   </div> -->
   <ul class="nav nav-pills nav-justified nav-tabs" role="tablist" id="nav">
     <li class="nav-item">
-      <a class="nav-link active" id="toTryMenu" data-toggle="tab" href="#toTry" role="tab" aria-controls="toTry" aria-selected="true">To Try</a>
+      <a class="nav-link active" id="toTryMenu" data-toggle="tab" href="#toTry" role="tab" aria-controls="toTry" aria-selected="true">To Try<span class="num badge">{{toTry}}</span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="TridMenu" data-toggle="tab" href="#tried" role="tab" aria-controls="tried" aria-selected="false">Tried</a>
+      <a class="nav-link" id="TridMenu" data-toggle="tab" href="#tried" role="tab" aria-controls="tried" aria-selected="false">Tried<span class="num badge">{{tried}}</span></a>
     </li>
   </ul>
 
@@ -43,14 +44,14 @@
             {{#ifvalue userTried desired="false"}}
         <div class="col-sm-6">
           <div class="card" id="block-{{id}}">
-            <div class="card-body">
+            <div class="card-body" id="block-body-{{id}}">
               <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
-              <h5 class="card-title" style="text-align: center;"><a href="idea/{{id}}">{{title}}</a></h5>
+              <h5 class="card-title capitalize" style="text-align: center;"><a href="/idea/{{id}}">{{title}}</a></h5>
               <p class="card-text" style="text-align: center;">{{description}}
               <br />
-              <span class="badge badge-primary">{{feeling}}</span>
-              <span class="badge badge-success">{{time}}</span>
-              <span class="badge badge-warning">{{cost}}</span>
+              <a href="/surprise_list/feeling/{{feeling}}"><span class="badge badge-primary">{{feeling}}</span></a>
+              <a href="/surprise_list/time/{{time}}"><span class="badge badge-success">{{time}}</span></a>
+              <a href="/surprise_list/cost/{{cost}}"><span class="badge badge-warning">{{cost}}</span></a>
               <br />
               <br />
               <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModal-{{id}}" style="width: 10em; background-color: #428bca;">I tried it !</button></p>
@@ -116,15 +117,15 @@
           {{#ifvalue myList desired="true"}}
             {{#ifvalue userTried desired="true"}}
         <div class="col-sm-6">
-          <div class="card">
+          <div class="card" id="card-{{id}}">
             <div class="card-body">
               <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
-              <h5 class="card-title" style="text-align: center;"> <a href="idea/{{id}}">{{title}}</a></h5>
+              <h5 class="card-title capitalize" style="text-align: center;"> <a href="/idea/{{id}}">{{title}}</a></h5>
               <p class="card-text" style="text-align: center;">{{description}}
               <br />
-              <span class="badge badge-primary">{{feeling}}</span>
-              <span class="badge badge-success">{{time}}</span>
-              <span class="badge badge-warning">{{cost}}</span>
+              <a href="/surprise_list/feeling/{{feeling}}"><span class="badge badge-primary">{{feeling}}</span></a>
+              <a href="/surprise_list/time/{{time}}"><span class="badge badge-success">{{time}}</span></a>
+              <a href="/surprise_list/cost/{{cost}}"><span class="badge badge-warning">{{cost}}</span></a>
               <br />
               <br />
               <!-- I tried it again button -->
@@ -218,10 +219,12 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="/js/mylist.js"></script>
-  <script src="/js/explore.js"></script>
+  <!-- <script src="/js/explore.js"></script> -->
   <!-- <script src="/js/idea.js"></script>
   <script src="/js/user.js"></script> -->
 

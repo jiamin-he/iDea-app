@@ -352,9 +352,8 @@ function initializePage() {
 
 !function() {
   
-  // $.get( "ajax/test.html", function( data ) {
-  //   $( ".result" ).html( data );
-  //   alert( "Load was performed." );
+  // $.get( "/hi", function( data1 ) {
+  //   console.log(data1);
   // });
 
   var data = [

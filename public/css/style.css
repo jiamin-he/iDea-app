@@ -1,3 +1,20 @@
+.capitalize {
+  text-transform: capitalize;
+}
+
+.leftmost {
+  position: absolute;
+  top: 0.8em;
+  left: 0.75em;
+  
+}
+
+.num {
+  margin-left:1.25em;
+  color: #212529;
+  background-color: #cdeffe;
+}
+
 div.container {
     width: 100%;
     border: 1px solid gray;
@@ -61,6 +78,14 @@ body {
   right:auto!important;
   width: calc(100% - 30px);
   color:#ffd747;
+}
+
+.fixed-second-bottom {
+  position:fixed;
+  bottom:75px;
+  /*right:25%;*/
+  left:30%;
+  /*margin-left:-150px;*/
 }
 
 .icon-bar {

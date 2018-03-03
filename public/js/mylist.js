@@ -2,8 +2,9 @@
 
 $(document).ready(function() {
 	initializePage();
+	
 	$(function() {
-			$("section").each(function() {
+			$(".card").each(function() {
 				var hue = 'rgb(' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ')';
 						$(this).css("background-color", hue);});
 		});
@@ -26,7 +27,49 @@ $(document).ready(function() {
 })
 
 function initializePage() {
-	$(".round").click(checked);
+	// $(".round").click(checked);
+	
+	initCard();
+}
+
+function postCallback(res){
+    
+  }
+
+function initCard() {
+
+	var pressTimer;
+
+	$(".card").mouseup(function(){
+		console.log("up");
+	  clearTimeout(pressTimer);
+	  // Clear timeout
+	  return false;
+	}).mousedown(function(event){
+		console.log("down");
+	  // Set timeout
+	  pressTimer = window.setTimeout(function() {
+	   		var id = event.currentTarget.id.substr('block-'.length);
+			// console.log($("#block-body-"+id)[0].style);
+			// $("#block-"+id).addClass("disappear");
+			$("#block-"+id)[0].style.display = "none";
+			// $("#block-body-"+id)[0].style.display = "none";
+			$.post('delete_from_my_list', {id: id}, postCallback);
+		},500);
+
+	  return false; 
+	});
+	
+	// $(function(){
+	// 	$(".card").bind("taphold", tapholdHandler);
+		
+	// 	function tapholdHandler(event){
+			// var id = event.currentTarget.id.substr('block-'.length);
+			// console.log(id);
+			// $(this).addClass("disappear");
+			
+	// 	}
+	// });
 }
 
 function checked(e) {
