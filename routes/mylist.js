@@ -32,7 +32,7 @@ exports.view = function(req, res){
       "class": " "
     } 
   }
-  data["card"]=req.params.card;
+  
   res.render('mylist',data);
 };
 
@@ -91,7 +91,14 @@ exports.calendarNav = function(req,res) {
     "class": " show active "
   }
   data["navCard"] = req.params.id;
-  console.log(data["navCard"])
+  // console.log(data["navCard"])
   res.redirect('mylist');
 
+}
+
+exports.updateNavId = function(req,res) {
+  data["navCard"] = req.body.navCard;
+  data["toTrySection"] = req.body.toTrySection;
+  data["triedSection"] = req.body.triedSection;
+  res.send(data);
 }

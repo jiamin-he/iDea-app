@@ -82,6 +82,7 @@ app.get('/profile', profile.view);
 app.get('/calendar', calendar.view);
 app.get('/calendarData', calendar.getData);
 app.get('/mylist', mylist.view);
+app.post('/mylist/:toSection', mylist.updateNavId);
 app.get('/mylist/:toSection/:id', mylist.calendarNav);
 
 // User Profile Tabs
