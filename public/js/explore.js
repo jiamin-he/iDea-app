@@ -44,16 +44,16 @@ $('#newestSort').click(function(event){
     // $.post('/explore', {section: "newest"}, postCallback);
 });
 
-$('.fixed_bottom').click(function(event)) {
+$('.fixed_bottom').click(function(event) {
     timestamp2 = new Date().getTime();
     ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
-}
+};
 
 
-$('.top_right_button').click(function(event)) {
+$('.top_right_button').click(function(event){
     timestamp2 = new Date().getTime();
     ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
-}
+});
 
 $('.top_right_button_card').click(function(event){
     
