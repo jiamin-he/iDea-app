@@ -13,7 +13,8 @@
 <div class="container-fluid">
   <div class="top_menu_bar">
  <a href="javascript:window.history.back()"><i class="fas fa-chevron-circle-left fa-lg leftmost" style="color: white;"></i></a>
-    <h1>Share an Idea</h1>
+    <h1 style="font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+ font-weight: 100;">Share an Idea</h1>
   </div>
  
 
@@ -51,6 +52,7 @@
   </select> -->
 
 
+<div class="form-style-5">
     <!-- as form version -->
     <form role="form" method="get" action="/add">
       <!-- <div class="form-group">
@@ -58,15 +60,16 @@
         <input type="text" class="form-control"  placeholder="Your Name ~" name="provider">
       </div> -->
       <div class="form-group">
-        <label for="title">Title</label>
+        <br />
+        <label for="title"><span class="number">1</span>Title</label>
         <input type="text" class="form-control capitalize"  placeholder="What is your idea?" name="title">
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description"><span class="number">2</span>Description</label>
         <textarea class="form-control" rows="3" placeholder="Describe your idea briefly !" name="description"></textarea>
       </div>
       <div class="form-group">
-        <label for="category">Select a category...</label>
+        <label for="category"><span class="number">3</span>Select a category...</label>
         <select class="form-control" name="category" >
           <option value="adventurous">adventurous</option>
           <option value="stress-relieving">stress-relieving</option>
@@ -76,7 +79,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="time">How long will it take?</label>
+        <label for="time"><span class="number">4</span>How long will it take?</label>
         <select class="form-control" name="time" >
           <option value="minutes">minutes</option>
           <option value="hours">hours</option>
@@ -86,7 +89,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="cost">How much will it cost?</label>
+        <label for="cost"><span class="number">5</span>How much will it cost?</label>
         <select class="form-control" name="cost" >
           <option value="$0">$0</option>
           <option value="$">$</option>
@@ -104,7 +107,7 @@
       </div> -->
       <fieldset class="form-group">
         <div class="row">
-          <legend class="col-form-label col-sm-2 pt-0">Add to...</legend>
+          <legend class="col-form-label col-sm-2 pt-0" style="font-size: 1em;"><span class="number" style="font-size: 0.8em;">6</span>Add to...</legend>
           <div class="col-sm-10">
             <div class="form-check">
               <input class="form-check-input" type="radio" name="add_to" id="gridRadios1" value="public" checked>
@@ -130,7 +133,7 @@
       </div> -->
       <fieldset class="form-group">
         <div class="row">
-          <legend class="col-form-label col-sm-2 pt-0">Have you tried it before?</legend>
+          <legend class="col-form-label col-sm-2 pt-0" style="font-size: 1em;"><span class="number" style="font-size: 0.8em;">7</span>Have you tried it before?</legend>
           <div class="col-sm-10">
             <div class="form-check">
               <input class="form-check-input" type="radio" name="user_tried" id="gridRadios1" value="true" checked>
@@ -147,14 +150,122 @@
           </div>
         </div>
       </fieldset>
+      <div style="text-align: center;">
       <button type="submit" class="btn btn-primary">Share</button>
+      </div>
     </form>
 
 
 
 </div>
 
+   <style type="text/css">
+      <style type="text/css">
   
+  .form-style-5{
+      max-width: 500px;
+      padding: 10px 20px;
+      background: #428bca;
+      margin: 10px auto;
+      padding: 20px;
+      background: #428bca;
+      border-radius: 8px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .form-style-5 fieldset{
+      border: none;
+  }
+  .form-style-5 legend {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+  }
+  .form-style-5 label {
+      display: block;
+      margin-bottom: 8px;
+  }
+  .form-style-5 input[type="text"],
+  .form-style-5 input[type="date"],
+  .form-style-5 input[type="datetime"],
+  .form-style-5 input[type="email"],
+  .form-style-5 input[type="number"],
+  .form-style-5 input[type="search"],
+  .form-style-5 input[type="time"],
+  .form-style-5 input[type="url"],
+  .form-style-5 textarea,
+  .form-style-5 select {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      background: rgba(255,255,255,.1);
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      margin: 0;
+      outline: 0;
+      padding: 7px;
+      width: 100%;
+      box-sizing: border-box; 
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box; 
+      background-color: #e8eeef;
+      color:#8a97a0;
+      -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+      margin-bottom: 30px;
+      
+  }
+  .form-style-5 input[type="text"]:focus,
+  .form-style-5 input[type="date"]:focus,
+  .form-style-5 input[type="datetime"]:focus,
+  .form-style-5 input[type="email"]:focus,
+  .form-style-5 input[type="number"]:focus,
+  .form-style-5 input[type="search"]:focus,
+  .form-style-5 input[type="time"]:focus,
+  .form-style-5 input[type="url"]:focus,
+  .form-style-5 textarea:focus,
+  .form-style-5 select:focus{
+      background: #d2d9dd;
+  }
+  .form-style-5 select{
+      -webkit-appearance: menulist-button;
+      height:35px;
+  }
+  .form-style-5 .number {
+      background: #428bca;
+      color: #fff;
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      font-size: 0.8em;
+      margin-right: 4px;
+      line-height: 30px;
+      text-align: center;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+      border-radius: 15px 15px 15px 0px;
+  }
+
+  .form-style-5 input[type="submit"],
+  .form-style-5 input[type="button"]
+  {
+      position: relative;
+      display: block;
+      padding: 19px 39px 18px 39px;
+      color: #FFF;
+      margin: 0 auto;
+      background: #1abc9c;
+      font-size: 18px;
+      text-align: center;
+      font-style: normal;
+      width: 100%;
+      border: 1px solid #16a085;
+      border-width: 1px 1px 3px;
+      margin-bottom: 10px;
+  }
+  .form-style-5 input[type="submit"]:hover,
+  .form-style-5 input[type="button"]:hover
+  {
+      background: #109177;
+  }
+  </style>
+    </style>
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

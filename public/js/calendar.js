@@ -64,8 +64,14 @@ function initializePage() {
     
     // produce random dates for each event.
     this.events.forEach(function(ev) {
-     ev.date = self.current.clone().date(Math.random() * (29 - 1) + 1);
-     // console.log(ev.date);
+     // ev.date = self.current.clone().date(Math.random() * (29 - 1) + 1);
+     if(!ev.reflectionDate){
+        ev.date = self.current.clone().date(Math.random() * (29 - 1) + 1);
+     } else {
+        var ddd = new Date(ev.reflectionDate);
+        ev.date = moment(ddd);
+     }
+     
     });
     
     
@@ -171,6 +177,7 @@ function initializePage() {
 
       todaysEvents.forEach(function(ev) {
         var evSpan = createElement('span', ev.color);
+        // var evSpan = createElement('span', ev.calendarColor);
         element.appendChild(evSpan);
       });
     }
@@ -266,7 +273,9 @@ function initializePage() {
     events.forEach(function(ev) {
       var div = createElement('div', 'event');
       var square = createElement('div', 'event-category ' + ev.color);
+      // var square = createElement('div', 'event-category ' + ev.calendarColor);
       var span = createElement('span', '', ev.eventName);
+      // var span = createElement('span', '', ev.title);
 
       div.appendChild(square);
       div.appendChild(span);
@@ -308,6 +317,7 @@ function initializePage() {
     var legend = createElement('div', 'legend');
     var calendars = this.events.map(function(e) {
       return e.calendar + '|' + e.color;
+      // return e.feeling + '|' + e.calendarColor;
     }).reduce(function(memo, e) {
       if(memo.indexOf(e) === -1) {
         memo.push(e);
@@ -351,13 +361,33 @@ function initializePage() {
 }();
 
 !function() {
-  
-  // $.get( "/hi", function( data1 ) {
-  //   console.log(data1);
-  // });
-  // var curStorage = window.localStorage;
-  // console.log(curStorage);
+  var dd;
+  jQuery.ajaxSetup({async:false});
+  $.get( "/calendarData", function( data1 ) {
+    dd= data1;
+    console.log(data1);
 
+  });
+
+  var data2 = [];
+  for(var i in dd.ideas){
+    var cur = dd.ideas[i];
+    for(var j in cur.notes){
+      data2.push({
+        eventName: cur['title'],
+        calendar: cur['feeling'],
+        color: cur['calendarColor'],
+        reflectionDate:cur.notes[j]['date']
+      });
+      data2.push({
+        eventName: cur['title'],
+        calendar: cur['feeling'],
+        color: cur['calendarColor']
+      });
+    }
+  }
+  
+  
   var data = [
     { eventName: 'Stress-relieving - 1', calendar: 'Stress-relieving', color: 'orange' },
     { eventName: 'Stress-relieving - 2', calendar: 'Stress-relieving', color: 'orange' },
@@ -389,6 +419,6 @@ function initializePage() {
     
   }
 
-  var calendar = new Calendar('#calendar', data);
+  var calendar = new Calendar('#calendar', data2);
 
 }();

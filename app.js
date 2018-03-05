@@ -80,6 +80,7 @@ app.get('/explore2', explore.altView);
 app.get('/surprise', surprise.view);
 app.get('/profile', profile.view);
 app.get('/calendar', calendar.view);
+app.get('/calendarData', calendar.getData);
 app.get('/mylist', mylist.view);
 
 // User Profile Tabs
@@ -89,7 +90,7 @@ app.get('/user/:name', user.view);
 app.get('/idea/:id', idea.view);
 
 // Idea tried
-app.get('/idea/tried/:fromPage/:triedId', mylist.tried);
+app.get('/idea/tried/:fromPage/:fromSection/:triedId', mylist.tried);
 
 // Add new ideas Tabs
 app.get('/add_new_ideas', add_new_ideas.view);

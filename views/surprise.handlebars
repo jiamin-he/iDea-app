@@ -13,127 +13,124 @@
 <div class="container-fluid ">
 		<div class="top_menu_bar">
 		<a href="javascript:window.history.back()"><i class="fas fa-chevron-circle-left fa-lg leftmost" style="color: white;"></i></a>
-			<h1>Surprise Me</h1>
+			<h1 style="font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+ font-weight: 100;">Surprise Me</h1>
   		</div>
+
+  		<div>
+  		<div class="tab-content container" data-spy="scroll">
+  			<form role="form" method="get" action="/surprise_list">
+  				<fieldset class="form-group">
+  					<div class="card-columns">
+  						<div class="row">
+  							<div class="col-sm-10">
+  								<div class="card">
+  									<div class="card-footer">
+  										<legend class="col-form-label col-sm-2 pt-0" style="text-align: center; font-size: 1em">You want to try something...</legend>
+  									</div>
+  									<div class="card-body" style="text-align: center;">
+  										<div class="form-check">
+									          <input class="form-check-input" type="radio" name="feeling" id="relaxing" value="adventurous" style="left: 20%;">
+									          <label class="form-check-label" for="relaxing">
+									           <img class="card-img-top img-fluid" style="width:2em;"  src="/img/relaxing.png" alt="Card image cap"> relaxing
+									          </label>
+									    </div>
+									    <div class="form-check">
+									          <input class="form-check-input" type="radio" name="feeling" id="charitable" value="adventurous" style="left: 20%;">
+									          <label class="form-check-label" for="charitable">
+									           <img class="card-img-top img-fluid" style="width:2em;"  src="/img/charitable.png" alt="Card image cap"> charitable
+									          </label>
+									    </div>
+									    <div class="form-check">
+									          <input class="form-check-input" type="radio" name="feeling" id="productive" value="productive" style="left: 20%;">
+									          <label class="form-check-label" for="productive">
+									           <img class="card-img-top img-fluid" style="width:2em;"  src="/img/productive.png" alt="Card image cap"> productive
+									          </label>
+									    </div>
+  										<div class="form-check">
+									          <input class="form-check-input" type="radio" name="feeling" id="adventurous" value="adventurous" style="left: 20%;">
+									          <label class="form-check-label" for="adventurous">
+									           <img class="card-img-top img-fluid" style="width:2em;"  src="/img/adventurous.png" alt="Card image cap"> adventurous
+									          </label>
+									    </div>
+									    <div class="form-check">
+									          <input class="form-check-input" type="radio" name="feeling" id="stress-relieving" value="adventurous" checked style="left: 20%;">
+									          <label class="form-check-label" for="stress-relieving">
+									           <img class="card-img-top img-fluid" style="width:2em;"  src="/img/stress-relieving.png" alt="Card image cap"> stress-relieving
+									          </label>
+									    </div>
+  									</div>
+  								</div>
+  							</div>
+  						</div>
+  						<div class="row">
+  							<div class="col-sm-10">
+  								<div class="card">
+  									<div class="card-footer">
+  										<legend class="col-form-label col-sm-2 pt-0" style="text-align: center; font-size: 1em">How much you want to spend?</legend>
+  									</div>
+  									<div class="card-body" style="text-align: center;">
+  										<div class="form-check">
+									          <input class="form-check-input" type="radio" name="time" id="days" value="days" checked style="left: 20%">
+									          <label class="form-check-label" for="days">
+									            days
+									          </label>
+									    </div>
+  										<div class="form-check">
+									          <input class="form-check-input" type="radio" name="time" id="hours" value="hours" checked style="left: 20%">
+									          <label class="form-check-label" for="hours">
+									            hours
+									          </label>
+									    </div>
+  										<div class="form-check">
+									          <input class="form-check-input" type="radio" name="time" id="minutes" value="minutes" checked style="left: 20%">
+									          <label class="form-check-label" for="minutes">
+									            minutes
+									          </label>
+									    </div>
+  									</div>
+  								</div>
+  							</div>
+  						</div>
+  						<div class="row">
+  							<div class="col-sm-10">
+  								<div class="card">
+  									<div class="card-footer">
+  										<legend class="col-form-label col-sm-2 pt-0" style="text-align: center; font-size: 1em">How much time do you have?</legend>
+  									</div>
+  									<div class="card-body" >
+  										<div class="form-check" style="text-align: center;" >
+									          <input class="form-check-input" type="radio" name="cost" id="$" value="$" style="left: 20%">
+									          <label class="form-check-label" for="$">
+									            $
+									          </label>
+									    </div>
+									    <div class="form-check" style="text-align: center;" >
+									          <input class="form-check-input" type="radio" name="cost" id="$$" value="$$" style="left: 20%">
+									          <label class="form-check-label" for="$$">
+									            $$
+									          </label>
+									    </div>
+									    <div class="form-check" style="text-align: center;" >
+									          <input class="form-check-input" type="radio" name="cost" id="$$$" value="$$$" checked style="left: 20%">
+									          <label class="form-check-label" for="$$$">
+									            $$$
+									          </label>
+									    </div>
+  									</div>
+  								</div>
+  							</div>
+  						</div>
+  					</div>
+  				</fieldset>
+  				<div style="text-align: center;">
+  				 <button type="submit" class="btn btn-primary wrapper">Surprise Me !</button>
+  				</div>
+  			</form>
+  		</div>
+
   		
-       <div class =“container” > 
-		<form role="form" method="get" action="/surprise_list">
-			<fieldset class="form-group">
-			    <div class="row">
-			      <legend class="col-form-label col-sm-2 pt-0">You want to try something...</legend>
-			      <div class="col-sm-10">
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="feeling" id="adventurous" value="adventurous">
-			          <label class="form-check-label" for="adventurous">
-			           adventurous
-			          </label>
-			        </div>
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="feeling" id="stress-relieving" value="stress-relieving" checked>
-			          <label class="form-check-label" for="stress-relieving">
-			            stress-relieving
-			          </label>
-			        </div>
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="feeling" id="charitable" value="charitable">
-			          <label class="form-check-label" for="charitable">
-			            charitable
-			          </label>
-			        </div>
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="feeling" id="relaxing" value="relaxing">
-			          <label class="form-check-label" for="relaxing">
-			            relaxing
-			          </label>
-			        </div>
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="feeling" id="productive" value="productive">
-			          <label class="form-check-label" for="productive">
-			            productive
-			          </label>
-			        </div>
-			      </div>
-			    </div>
-
-			    <br/>
-			    <div class="row">
-			      <legend class="col-form-label col-sm-2 pt-0">How much time do you have?</legend>
-			      <div class="col-sm-10">
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="time" id="minutes" value="minutes" checked>
-			          <label class="form-check-label" for="minutes">
-			            minutes
-			          </label>
-			        </div>
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="time" id="hours" value="hours">
-			          <label class="form-check-label" for="hours">
-			            hours
-			          </label>
-			        </div>
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="time" id="days" value="days">
-			          <label class="form-check-label" for="days">
-			            days
-			          </label>
-			        </div>
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="time" id="months" value="months">
-			          <label class="form-check-label" for="months">
-			            months
-			          </label>
-			        </div>
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="time" id="years" value="years">
-			          <label class="form-check-label" for="years">
-			            years
-			          </label>
-			        </div>
-			      </div>
-			    </div>
-
-				<br/>
-			    <div class="row">
-			      <legend class="col-form-label col-sm-2 pt-0">How much money do you want to spend?</legend>
-			      <div class="col-sm-10">
-			      	<div class="form-check">
-			          <input class="form-check-input" type="radio" name="cost" id="$0" value="$0">
-			          <label class="form-check-label" for="$0">
-			            $0
-			          </label>
-			        </div>
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="cost" id="$" value="$">
-			          <label class="form-check-label" for="$">
-			            $
-			          </label>
-			        </div>
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="cost" id="$$" value="$$">
-			          <label class="form-check-label" for="$$">
-			            $$
-			          </label>
-			        </div>
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="cost" id="$$$" value="$$$" checked>
-			          <label class="form-check-label" for="$$$">
-			            $$$
-			          </label>
-			        </div>
-			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="cost" id="$$$$" value="$$$$">
-			          <label class="form-check-label" for="$$$$">
-			            $$$$
-			          </label>
-			        </div>
-			      </div>
-			    </div>
-
-			  </fieldset>
-	      <button type="submit" class="btn btn-primary wrapper">Surprise Me !</button>
-
-	    </form>
-	</div>
+       
 
 
 	    <!-- previous version for suprise -->
@@ -221,11 +218,46 @@
 		
 	</div>
 
+	<style type="text/css">
+
+		.card-columns .card {
+		    margin-top: 1rem;
+		}
+
+		input[type="radio"] {
+		  appearance: none;
+		  margin: 0 0px;
+		  width: 1.0em;
+		  height: 1.0em;
+		  background: #eee;
+		  box-shadow: inset 0 0 0 0.2em white, 0 0 0 0.2em;
+		  border-radius: 50%;
+		  transition: 0.2s;
+		  cursor: pointer;
+		  color: #428bca;
+		  left: -5%;
+		  top: 30%;
+		}
+		input[type="radio"]:hover, input[type="radio"]:checked {
+		  background: #428bca;
+		  box-shadow: inset 0 0 0 0.6em white, 0 0 0 0.3em;
+		}
+		input[type="radio"]:checked {
+		  background: #000;
+		  box-shadow: inset 0 0 0 0.2em white, 0 0 0 0.2em #000;
+		}
+		input[type="radio"]:focus {
+		  outline: 0;
+		}
+
+		</style>
+
 	
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src = /js/surprise.js></script>
+	<script src = /js/explore.js></script>
 </body>
 </html>

@@ -15,7 +15,8 @@
 
 
 <div class="container-fluid">
-  <div class="top_menu_bar"><h1>My List</h1>
+  <div class="top_menu_bar"><h1 style="font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+ font-weight: 100;">My List</h1>
     <a href="add_new_ideas"><i class="fas fa-plus fa-lg top_right_button"></i></a>
   </div>
 
@@ -25,17 +26,17 @@
   </div> -->
   <ul class="nav nav-pills nav-justified nav-tabs" role="tablist" id="nav">
     <li class="nav-item">
-      <a class="nav-link active" id="toTryMenu" data-toggle="tab" href="#toTry" role="tab" aria-controls="toTry" aria-selected="true">To Try<span class="num badge">{{toTry}}</span></a>
+      <a class="nav-link {{toTrySection.class}}" id="toTryMenu" data-toggle="tab" href="#toTry" role="tab" aria-controls="toTry" aria-selected="{{toTrySection.section}}">To Try<span class="num badge">{{toTry}}</span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="TridMenu" data-toggle="tab" href="#tried" role="tab" aria-controls="tried" aria-selected="false">Tried<span class="num badge">{{tried}}</span></a>
+      <a class="nav-link {{triedSection.class}}" id="TridMenu" data-toggle="tab" href="#tried" role="tab" aria-controls="tried" aria-selected="{{triedSection.section}}">Tried<span class="num badge">{{tried}}</span></a>
     </li>
   </ul>
 
 <div>
   <div class="tab-content container" data-spy="scroll">
 
-    <div class="tab-pane fade show active" id="toTry" role="tabpanel" aria-labelledby="toTryMenu">
+    <div class="tab-pane fade {{toTrySection.class}}" id="toTry" name="toTry" role="tabpanel" aria-labelledby="toTryMenu">
        <br />
       <div class="card-columns">
       <div class="row">
@@ -54,7 +55,7 @@
               <a href="/surprise_list/cost/{{cost}}"><span class="badge badge-warning">{{cost}}</span></a>
               <br />
               <br />
-              <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModal-{{id}}" style="width: 10em; background-color: #428bca;">I tried it !</button></p>
+              <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModal-{{id}}" style="width: 10em; background-color: #428bca; border-color: #428bca">I tried it !</button></p>
               <!-- pop up dialog -->
               <div class="modal fade" id="reflectionModal-{{id}}" tabindex="-1" role="dialog" aria-labelledby="reflectionModalLabel-{{id}}" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -68,7 +69,7 @@
                     </div>
 
                     <div class="modal-body">
-                      <form role="form" method="get" action="/idea/tried/mylist/{{id}}">
+                      <form role="form" method="get" action="/idea/tried/mylist/toTry/{{id}}">
                         <!-- <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Recipient:</label>
                           <input type="text" class="form-control" id="recipient-name">
@@ -78,13 +79,34 @@
                           <input type="text" class="form-control" placeholder="Write down some cool stories or feelings!" name="reflection"></input>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                           <label for="property">Would you like to share your reflection to others?</label>
                           <select class="form-control" name="property" >
                             <option value="1">Yep!</option>
                             <option value="2">Nope...</option>
                           </select>
-                        </div>
+                        </div> -->
+
+                        <fieldset class="form-group">
+                          <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0" style="font-size: 1em;">Would you like to share your reflection to others?</legend>
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="property" id="gridRadios1" value="public" checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                  Yep!
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="property" id="gridRadios2" value="private">
+                                <label class="form-check-label" for="gridRadios2">
+                                  Nope...
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+
 
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
@@ -109,7 +131,7 @@
 
     
 
-    <div class="tab-pane fade" id="tried" role="tabpanel" aria-labelledby="TridMenu">
+    <div class="tab-pane fade {{triedSection.class}}" id="tried" name="tried" role="tabpanel" aria-labelledby="triedMenu">
       <br />
       <div class="card-columns">
       <div class="row">
@@ -129,13 +151,13 @@
               <br />
               <br />
               <!-- I tried it again button -->
-              <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModalAgain-{{id}}" style="width: 8em; background-color: #5cb85c;" >I tried it again!</button>
+              <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModalAgain-{{id}}" style="width: 8em; background-color: #5cb85c; border-color: #5cb85c" >I tried it again!</button>
               <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample_{{id}}" aria-expanded="false" aria-controls="collapseExample_{{id}}" style="width: 8em; background-color: #428bca;">Reflection</button>
               
               <div class="collapse" id="collapseExample_{{id}}">
                 {{#each notes}}
-                  <h5>{{date}}</h5>
-                  <p>{{reflection}}</p>
+                  <p>{{date}}</p>
+                  <p style="text-align: center; font-weight: bold;">{{reflection}}</p>
                 {{/each}}
               </div>
               </p>
@@ -153,7 +175,7 @@
                     </div>
 
                     <div class="modal-body">
-                      <form role="form" method="get" action="/idea/tried/mylist/{{id}}">
+                      <form role="form" method="get" action="/idea/tried/mylist/tried/{{id}}">
                         <!-- <div class="form-group">
                           <label for="recipient-name" class="col-form-label">Recipient:</label>
                           <input type="text" class="form-control" id="recipient-name">
@@ -163,13 +185,34 @@
                           <input type="text" class="form-control" placeholder="Write down some cool stories or feelings!" name="reflection"></input>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                           <label for="property">Would you like to share your reflection to others?</label>
                           <select class="form-control" name="property" >
                             <option value="1">Yep!</option>
                             <option value="2">Nope...</option>
                           </select>
-                        </div>
+                        </div> -->
+
+                        <fieldset class="form-group">
+                          <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0" style="font-size: 1em;">Would you like to share your reflection to others?</legend>
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="property" id="gridRadios1" value="public" checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                  Yep!
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="property" id="gridRadios2" value="private">
+                                <label class="form-check-label" for="gridRadios2">
+                                  Nope...
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        
 
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
@@ -182,7 +225,7 @@
                   </div>
                 </div>
               </div>
-              <!-- I tried it agian button part -->
+              <!-- I tried it again button part -->
               
 
             </div>
