@@ -370,7 +370,7 @@ function initializePage() {
   jQuery.ajaxSetup({async:false});
   $.get( "/calendarData", function( data1 ) {
     dd= data1;
-    console.log(data1);
+    // console.log(data1);
 
   });
 
@@ -384,7 +384,7 @@ function initializePage() {
           eventName: cur['title'],
           calendar: cur['feeling'],
           color: cur['calendarColor'],
-          reflectionDate:cur.notes[j]['date']
+          reflectionDate:cur.notes[j]['longDate']
         });
         data2.push({
           id: cur['id'],
@@ -396,6 +396,7 @@ function initializePage() {
     } 
   }
   
+  console.log(data2);
   
   var data = [
     { eventName: 'Stress-relieving - 1', calendar: 'Stress-relieving', color: 'orange' },

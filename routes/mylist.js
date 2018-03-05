@@ -40,11 +40,12 @@ exports.tried = function(req, res){
   var temp = new Date();
   var object = {
   	"reflection": req.query.reflection,
-  	"date": temp.toString(),
-    "year": temp.toDateString(),
+  	"longDate": temp.toString(),
+    "day": temp.toDateString().substr(0,"Mon".length),
+    "date": temp.toDateString().substr("Mon ".length),
     "time": temp.toTimeString().substr(0, "23:15:30".length),
     "property": req.query.property,
-    "provider": "McDonald"
+    "provider": "I"
   }
   console.log(object);
   for(i in data.ideas){

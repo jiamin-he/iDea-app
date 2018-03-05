@@ -4,9 +4,7 @@
 var timestamp1, timestamp2;
 
 $(document).ready(function() {
-
-    
-    
+  
 	initializePage();
 	$(function() {
 			$(".card").each(function() {

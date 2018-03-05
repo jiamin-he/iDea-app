@@ -189,8 +189,10 @@
               
               <div class="collapse" id="collapseExample_{{id}}">
                 {{#each notes}}
-                  <p>{{date}}</p>
+                  {{#ifvalue provider desired="I"}}
+                  <p style="text-align: left;font-size: 0.7em";>{{date}}, {{time}}</p>
                   <p style="text-align: center; font-weight: bold;">{{reflection}}</p>
+                  {{/ifvalue}}
                 {{/each}}
               </div>
               </p>
