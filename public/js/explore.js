@@ -1,9 +1,14 @@
 'use strict';
 
+
+var timestamp1, timestamp2;
+
 $(document).ready(function() {
+
+    
+    
 	initializePage();
 	$(function() {
-        console.log("explore2");
 			$(".card").each(function() {
 				var hue = 'rgb(' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ')';
 						$(this).css("background-color", hue);});
@@ -12,7 +17,9 @@ $(document).ready(function() {
 	})
 
 function initializePage() {
-    
+    timestamp1 = new Date().getTime();
+    console.log(timestamp1);
+    ga('create','UA-93709601-3','auto');
 }
 
 function postCallback(res){
@@ -20,7 +27,9 @@ function postCallback(res){
   }
 
 $('#trendingSort').click(function(event){
-
+    timestamp2 = new Date().getTime();
+    // console.log(timestamp2);
+    ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
     window.location ='/explore/trending';
     // $.post('/explore', {section: "trending"}, postCallback);
 });
@@ -31,6 +40,7 @@ $('#newestSort').click(function(event){
 });
 
 $('.top_right_button_card').click(function(event){
+    
     event.preventDefault();
     // window.location.href = "/add_to_my_list";
     var id = event.currentTarget.id
@@ -45,7 +55,6 @@ $('.top_right_button_card').click(function(event){
     $(block)[0].style.display = "none";
 
     // for a/b testing
-    ga('create','UA-93709601-3','auto');
     ga('send','event','add_to_my_list','click');
 
 });
