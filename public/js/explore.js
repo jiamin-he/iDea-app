@@ -17,6 +17,16 @@ function postCallback(res){
     
   }
 
+$('#trendingSort').click(function(event){
+    window.location ='/explore/trending';
+    // $.post('/explore', {section: "trending"}, postCallback);
+});
+
+$('#newestSort').click(function(event){
+    window.location= '/explore/newest';
+    // $.post('/explore', {section: "newest"}, postCallback);
+});
+
 $('.top_right_button_card').click(function(event){
     event.preventDefault();
     // window.location.href = "/add_to_my_list";

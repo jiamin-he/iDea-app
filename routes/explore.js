@@ -16,12 +16,34 @@ exports.defaultView = function(req, res){
   data.ideas2.sort(function(a,b){
   	return b.tried - a.tried;
   });
-  console.log(data.ideas.length);
-  console.log(data.ideas2[data.ideas2.length-1]);
+
+  // default: toTry active
+  if(!data["newestSection"]) {
+    data["newestSection"] = {
+      "section": "true",
+      "class": " show active "
+    }
+    data["trendingSection"] = {
+      "section": "false",
+      "class": " "
+    } 
+  }
   res.render('explore',data);
 };
 
 exports.altView = function(req, res){
   // console.log(data);
   res.render('explore2',data);
+}
+
+exports.switchView = function(req,res){
+    data["trendingSection"] = {
+      "section": (req.params.section == "trending"? "true":"false"),
+      "class": (req.params.section == "trending"? " show active ":" ")
+    }
+    data["newestSection"] = {
+      "section": (req.params.section == "newest"? "true":"false"),
+      "class": (req.params.section == "newest"? " show active ":" ")
+    } 
+    res.redirect('/explore');
 }

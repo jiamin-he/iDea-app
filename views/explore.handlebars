@@ -48,17 +48,17 @@
 
   <ul class="nav nav-pills nav-justified nav-tabs" role="tablist" id="nav">
     <li class="nav-item">
-      <a class="nav-link active" id="newestSort" data-toggle="tab" href="#newest" role="tab" aria-controls="newest" aria-selected="true">Newest</a>
+      <a class="nav-link {{newestSection.class}}" id="newestSort" data-toggle="tab" href="#newest" role="tab" aria-controls="newest" aria-selected="{{newestSection.section}}">Newest</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="trendingSort" data-toggle="tab" href="#trending" role="tab" aria-controls="trending" aria-selected="false">Trending</a>
+      <a class="nav-link {{trendingSection.class}}" id="trendingSort" data-toggle="tab" href="#trending" role="tab" aria-controls="trending" aria-selected="{{trendingSection.section}}">Trending</a>
     </li>
   </ul>
 
 <div>
   <div class="tab-content container" data-spy="scroll">
 
-    <div class="tab-pane fade show active" id="newest" role="tabpanel" aria-labelledby="newestSort">
+    <div class="tab-pane fade {{newestSection.class}}" id="newest" role="tabpanel" aria-labelledby="newestSort">
       <br />
       <div class="card-columns">
         <div class="row">
@@ -109,7 +109,7 @@
     </div>
   </div>
 
-  <div class="tab-pane fade" id="trending" role="tabpanel" aria-labelledby="trendingSort">
+  <div class="tab-pane fade {{trendingSection.class}}" id="trending" role="tabpanel" aria-labelledby="trendingSort">
      <br />
      <div class="card-columns">
     <div class="row">
