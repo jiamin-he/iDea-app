@@ -274,11 +274,16 @@ function initializePage() {
       var div = createElement('div', 'event');
       var square = createElement('div', 'event-category ' + ev.color);
       // var square = createElement('div', 'event-category ' + ev.calendarColor);
+      var link = createElement('a', '');
+      link.href = '/mylist/tried/card-'+ev.id;
       var span = createElement('span', '', ev.eventName);
       // var span = createElement('span', '', ev.title);
 
-      div.appendChild(square);
-      div.appendChild(span);
+      link.appendChild(square);
+      link.appendChild(span);
+      div.appendChild(link);
+      // div.appendChild(square);
+      
       wrapper.appendChild(div);
     });
 
@@ -372,19 +377,23 @@ function initializePage() {
   var data2 = [];
   for(var i in dd.ideas){
     var cur = dd.ideas[i];
-    for(var j in cur.notes){
-      data2.push({
-        eventName: cur['title'],
-        calendar: cur['feeling'],
-        color: cur['calendarColor'],
-        reflectionDate:cur.notes[j]['date']
-      });
-      data2.push({
-        eventName: cur['title'],
-        calendar: cur['feeling'],
-        color: cur['calendarColor']
-      });
-    }
+    if(cur['userTried'] == "true" && cur['myList'] == "true") {
+      for(var j in cur.notes){
+        data2.push({
+          id: cur['id'],
+          eventName: cur['title'],
+          calendar: cur['feeling'],
+          color: cur['calendarColor'],
+          reflectionDate:cur.notes[j]['date']
+        });
+        data2.push({
+          id: cur['id'],
+          eventName: cur['title'],
+          calendar: cur['feeling'],
+          color: cur['calendarColor']
+        });
+      }
+    } 
   }
   
   

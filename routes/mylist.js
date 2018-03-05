@@ -31,10 +31,8 @@ exports.view = function(req, res){
       "section": "false",
       "class": " "
     } 
-  }else{
-    console.log("hi");
   }
-  
+  data["card"]=req.params.card;
   res.render('mylist',data);
 };
 
@@ -80,4 +78,20 @@ exports.tried = function(req, res){
     console.log("equals to details");
     res.redirect('/idea/'+req.params.triedId);
   }
+}
+
+exports.calendarNav = function(req,res) {
+
+  data["toTrySection"] = {
+    "section": "false",
+    "class":  " "
+  }
+  data["triedSection"] = {
+    "section": "true",
+    "class": " show active "
+  }
+  data["navCard"] = req.params.id;
+  console.log(data["navCard"])
+  res.redirect('mylist');
+
 }
