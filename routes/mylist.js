@@ -41,6 +41,8 @@ exports.tried = function(req, res){
   var object = {
   	"reflection": req.query.reflection,
   	"date": temp.toString(),
+    "year": temp.toDateString(),
+    "time": temp.toTimeString().substr(0, "23:15:30".length),
     "property": req.query.property,
     "provider": "McDonald"
   }
