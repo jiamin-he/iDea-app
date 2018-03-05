@@ -8,6 +8,8 @@ $(document).ready(function() {
   var deg = 0;
   var $card, $cardReject, $cardLike;
 
+  ga('create','UA-93709601-3','auto');
+
 
   // $(function() {
   //     $(".demo_card").each(function() {
@@ -40,7 +42,6 @@ $(document).ready(function() {
       $.post('add_to_my_list', {id: id}, postCallback);
 
       // for a/b testing
-      ga('create','UA-93709601-3','auto');
       ga('send','event','add_to_my_list','click');
 
     } else if (pullDeltaX <= -decisionVal) {
@@ -94,5 +95,16 @@ $(document).ready(function() {
       release();
     });
   });
+
+  $('.fixed_bottom').click(function(event)) {
+      timestamp2 = new Date().getTime();
+      ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
+  }
+
+
+  $('.top_right_button').click(function(event)) {
+      timestamp2 = new Date().getTime();
+      ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
+  }
 
 });

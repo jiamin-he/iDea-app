@@ -30,14 +30,30 @@ $('#trendingSort').click(function(event){
     timestamp2 = new Date().getTime();
     // console.log(timestamp2);
     ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
+
     window.location ='/explore/trending';
     // $.post('/explore', {section: "trending"}, postCallback);
 });
 
 $('#newestSort').click(function(event){
+    timestamp2 = new Date().getTime();
+    // console.log(timestamp2);
+    ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
+
     window.location= '/explore/newest';
     // $.post('/explore', {section: "newest"}, postCallback);
 });
+
+$('.fixed_bottom').click(function(event)) {
+    timestamp2 = new Date().getTime();
+    ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
+}
+
+
+$('.top_right_button').click(function(event)) {
+    timestamp2 = new Date().getTime();
+    ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
+}
 
 $('.top_right_button_card').click(function(event){
     
