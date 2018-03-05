@@ -7,6 +7,7 @@ $(document).ready(function() {
 				var hue = 'rgb(' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ')';
 						$(this).css("background-color", hue);});
 		});
+    
 	})
 
 function initializePage() {
@@ -40,5 +41,9 @@ $('.top_right_button_card').click(function(event){
     var block = "#block-" +(isNewest?"newest-":"trending-")  + id;
     // console.log(block);
     $(block)[0].style.display = "none";
+
+    // for a/b testing
+    ga('create','UA-93709601-3','auto');
+    ga('send','event','add_to_my_list','click');
 
 });

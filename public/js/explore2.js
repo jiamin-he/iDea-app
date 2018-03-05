@@ -8,6 +8,14 @@ $(document).ready(function() {
   var deg = 0;
   var $card, $cardReject, $cardLike;
 
+  $('.top_right_button_card').click(function(event){
+    
+    // for a/b testing
+    ga('create','UA-93709601-3','auto');
+    ga('send','event','add_to_my_list','click');
+
+  }；
+
   // $(function() {
   //     $(".demo_card").each(function() {
   //       var hue = 'rgb(' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ')';

@@ -2,6 +2,16 @@
 <html lang="en" >
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93709601-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-93709601-3');
+  </script>
+  
   <meta charset="UTF-8">
   <title>Explore</title>
   <link rel="stylesheet" href="/css/style.css">
@@ -27,9 +37,9 @@
           <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
           <p class="demo__card__name capitalize">{{title}} {{id}}
             <br/>
-            <span class="badge badge-primary">{{feeling}}</span>
-              <span class="badge badge-success">{{time}}</span>
-              <span class="badge badge-warning">{{cost}}</span>
+            <a href="/surprise_list/feeling/{{idea.feeling}}"><span class="badge badge-primary">{{feeling}}</span></a>
+                  <a href="/surprise_list/time/{{idea.time}}"><span class="badge badge-success">{{time}}</span></a>
+                  <a href="/surprise_list/cost/{{idea.cost}}"><span class="badge badge-warning">{{cost}}</span></a>
           </p>
           
 

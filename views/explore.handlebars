@@ -2,6 +2,21 @@
 <html lang="en" >
 
 <head>
+  <!-- Google Analytics Content Experiment code -->
+  <script>function utmx_section(){}function utmx(){}(function(){var
+  k='170860000-3',d=document,l=d.location,c=d.cookie;
+  if(l.search.indexOf('utm_expid='+k)>0)return;
+  function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+  indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+  length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+  '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+  '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+  '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+  valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+  '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+  </script><script>utmx('url','A/B');</script>
+  <!-- End of Google Analytics Content Experiment code -->
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93709601-3"></script>
   <script>
@@ -136,9 +151,9 @@
               <p class="card-text" style="text-align: center;">{{description}}
               <br />
               <br />
-              <span class="badge badge-primary">{{feeling}}</span>
-              <span class="badge badge-success">{{time}}</span>
-              <span class="badge badge-warning">{{cost}}</span></p>
+              <a href="/surprise_list/feeling/{{idea.feeling}}"><span class="badge badge-primary">{{feeling}}</span></a>
+                  <a href="/surprise_list/time/{{idea.time}}"><span class="badge badge-success">{{time}}</span></a>
+                  <a href="/surprise_list/cost/{{idea.cost}}"><span class="badge badge-warning">{{cost}}</span></a>
                
               <!-- <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p> -->
             </div>
