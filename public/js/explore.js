@@ -3,6 +3,7 @@
 $(document).ready(function() {
 	initializePage();
 	$(function() {
+        console.log("explore2");
 			$(".card").each(function() {
 				var hue = 'rgb(' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ')';
 						$(this).css("background-color", hue);});
@@ -19,6 +20,7 @@ function postCallback(res){
   }
 
 $('#trendingSort').click(function(event){
+
     window.location ='/explore/trending';
     // $.post('/explore', {section: "trending"}, postCallback);
 });

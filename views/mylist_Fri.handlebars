@@ -1,0 +1,524 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93709601-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-93709601-3');
+  </script>
+
+  <meta charset="UTF-8">
+  <title>My list</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/myListAnimation.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script>
+    function postCallback(res){
+    
+    }
+    var navCard = "{{navCard}}";
+    $.post('/mylist/tried', {
+      navCard: "",
+      toTrySection: {
+        "section": "true",
+        "class": " show active "
+      },
+      triedSection: {
+        "section": "false",
+        "class": " "
+      } 
+      }, postCallback);
+    navCard = "#"+navCard;
+    console.log(navCard);
+    window.location=navCard;
+    
+  </script> -->
+<body>
+
+
+<div class="container-fluid">
+  <div class="top_menu_bar"><h1 style="font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+ font-weight: 100;">My List</h1>
+    <a href="add_new_ideas"><i class="fas fa-plus fa-lg top_right_button"></i></a>
+  </div>
+
+  <!-- <div class="btn-group" style="width:100%">
+    <button style="width:50%">Ideas to Try</button>
+    <button style="width:50%">Tried it!</button>
+  </div> -->
+  <ul class="nav nav-pills nav-justified nav-tabs" role="tablist" id="nav">
+    <li class="nav-item">
+      <a class="nav-link active" id="toTryMenu" data-toggle="tab" href="#toTry" role="tab" aria-controls="toTry" aria-selected="true">To Try</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="TridMenu" data-toggle="tab" href="#tried" role="tab" aria-controls="tried" aria-selected="false">Tried</a>
+    </li>
+  </ul>
+
+<div>
+  <div class="tab-content container" data-spy="scroll">
+
+    <div class="tab-pane fade show active" id="toTry" role="tabpanel" aria-labelledby="toTryMenu">
+       <br />
+      <div class="card-columns">
+      <div class="row">
+        
+          
+        
+          
+        
+          
+        
+          
+            
+        <div class="col-sm-6">
+          <div class="card" id="block-idea7">
+            <div class="card-body">
+              <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/stress-relieving.png" alt="Card image cap">
+              <h5 class="card-title" style="text-align: center;"><a href="idea/idea7">read many many many many many many many books</a></h5>
+              <p class="card-text" style="text-align: center;">Bought an icecream for kids that are playing on the yard. :-) 
+              <br />
+              <span class="badge badge-primary">stress-relieving</span>
+              <span class="badge badge-success">minutes</span>
+              <span class="badge badge-warning">$$</span>
+              <br />
+              <br />
+              <button href="#" class="btn btn-primary tried" id="tried-idea7" data-toggle="modal" data-target="#reflectionModal-idea7" style="width: 10em; background-color: #428bca;">I tried it !</button></p>
+              <!-- pop up dialog -->
+              <div class="modal fade" id="reflectionModal-idea7" tabindex="-1" role="dialog" aria-labelledby="reflectionModalLabel-idea7" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="reflectionModalLabel-idea7">New reflection</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+
+                    <div class="modal-body">
+                      <form role="form" method="get" action="/idea/tried/mylist/idea7">
+                        <!-- <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Recipient:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div> -->
+                        <div class="form-group">
+                          <label for="reflection" class="col-form-label">How did you feel trying this idea?</label>
+                          <input type="text" class="form-control" placeholder="Write down some cool stories or feelings!" name="reflection"></input>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="property">Would you like to share your reflection to others?</label>
+                          <select class="form-control" name="property" >
+                            <option value="1">Yep!</option>
+                            <option value="2">Nope...</option>
+                          </select>
+                        </div>
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+                          <button type="submit" class="btn btn-primary">Continue</button>
+                        </div>
+
+                      </form>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            
+          
+        
+          
+        
+          
+            
+        <div class="col-sm-6">
+          <div class="card" id="block-idea3">
+            <div class="card-body">
+              <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/charitable.png" alt="Card image cap">
+              <h5 class="card-title" style="text-align: center;"><a href="idea/idea3">dance</a></h5>
+              <p class="card-text" style="text-align: center;">Bought an icecream for kids that are playing on the yard. :-) 
+              <br />
+              <span class="badge badge-primary">charitable</span>
+              <span class="badge badge-success">hours</span>
+              <span class="badge badge-warning">$</span>
+              <br />
+              <br />
+              <button href="#" class="btn btn-primary tried" id="tried-idea3" data-toggle="modal" data-target="#reflectionModal-idea3" style="width: 10em; background-color: #428bca;">I tried it !</button></p>
+              <!-- pop up dialog -->
+              <div class="modal fade" id="reflectionModal-idea3" tabindex="-1" role="dialog" aria-labelledby="reflectionModalLabel-idea3" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="reflectionModalLabel-idea3">New reflection</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+
+                    <div class="modal-body">
+                      <form role="form" method="get" action="/idea/tried/mylist/idea3">
+                        <!-- <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Recipient:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div> -->
+                        <div class="form-group">
+                          <label for="reflection" class="col-form-label">How did you feel trying this idea?</label>
+                          <input type="text" class="form-control" placeholder="Write down some cool stories or feelings!" name="reflection"></input>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="property">Would you like to share your reflection to others?</label>
+                          <select class="form-control" name="property" >
+                            <option value="1">Yep!</option>
+                            <option value="2">Nope...</option>
+                          </select>
+                        </div>
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+                          <button type="submit" class="btn btn-primary">Continue</button>
+                        </div>
+
+                      </form>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+      </div>
+  </div>
+
+    
+
+    <div class="tab-pane fade" id="tried" role="tabpanel" aria-labelledby="TridMenu">
+      <br />
+      <div class="card-columns">
+      <div class="row">
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/adventurous.png" alt="Card image cap">
+              <h5 class="card-title" style="text-align: center;"> <a href="idea/idea1">sing a song</a></h5>
+              <p class="card-text" style="text-align: center;">Bought an icecream for kids that are playing on the yard. :-) 
+              <br />
+              <span class="badge badge-primary">adventurous</span>
+              <span class="badge badge-success">days</span>
+              <span class="badge badge-warning">$$</span>
+              <br />
+              <br />
+              <!-- I tried it again button -->
+              <button href="#" class="btn btn-primary tried" id="tried-idea1" data-toggle="modal" data-target="#reflectionModalAgain-idea1" style="width: 8em; background-color: #5cb85c; border-color: #5cb85c;" >I tried it again!</button>
+              <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample_idea1" aria-expanded="false" aria-controls="collapseExample_idea1" style="width: 8em; background-color: #428bca;">Reflection</button>
+              
+              <div class="collapse" id="collapseExample_idea1">
+                
+                  <p>Thu Feb 22 2018 16:07:23 GMT-0800 (PST)</p>
+                  <p style="text-align: center; font-weight: bold;">happy</p>
+                
+              </div>
+              </p>
+              
+              <!-- pop up dialog -->
+              <div class="modal fade" id="reflectionModalAgain-idea1" tabindex="-1" role="dialog" aria-labelledby="reflectionModalAgainLabel-idea1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="reflectionModalAgainLabel-idea1">New reflection</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+
+                    <div class="modal-body">
+                      <form role="form" method="get" action="/idea/tried/mylist/idea1">
+                        <!-- <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Recipient:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div> -->
+                        <div class="form-group">
+                          <label for="reflection" class="col-form-label">How did you feel trying this idea?</label>
+                          <input type="text" class="form-control" placeholder="Write down some cool stories or feelings!" name="reflection"></input>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="property">Would you like to share your reflection to others?</label>
+                          <select class="form-control" name="property" >
+                            <option value="1">Yep!</option>
+                            <option value="2">Nope...</option>
+                          </select>
+                        </div>
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+                          <button type="submit" class="btn btn-primary">Continue</button>
+                        </div>
+
+                      </form>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <!-- I tried it agian button part -->
+              
+
+            </div>
+          </div>
+        </div>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/stress-relieving.png" alt="Card image cap">
+              <h5 class="card-title" style="text-align: center;"> <a href="idea/idea6">sing many many many many many many many songs</a></h5>
+              <p class="card-text" style="text-align: center;">Bought an icecream for kids that are playing on the yard. :-) 
+              <br />
+              <span class="badge badge-primary">stress-relieving</span>
+              <span class="badge badge-success">minutes</span>
+              <span class="badge badge-warning">$</span>
+              <br />
+              <br />
+              <!-- I tried it again button -->
+              <button href="#" class="btn btn-primary tried" id="tried-idea6" data-toggle="modal" data-target="#reflectionModalAgain-idea6" style="width: 8em; background-color: #5cb85c; border-color: #5cb85c;" >I tried it again!</button>
+              <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample_idea6" aria-expanded="false" aria-controls="collapseExample_idea6" style="width: 8em; background-color: #428bca;">Reflection</button>
+              
+              <div class="collapse" id="collapseExample_idea6">
+                
+                  <p>Thu Feb 22 2018 16:07:23 GMT-0800 (PST)</p>
+                  <p style="text-align: center; font-weight: bold;">happy</p>
+                
+              </div>
+              </p>
+              
+              <!-- pop up dialog -->
+              <div class="modal fade" id="reflectionModalAgain-idea6" tabindex="-1" role="dialog" aria-labelledby="reflectionModalAgainLabel-idea6" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="reflectionModalAgainLabel-idea6">New reflection</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+
+                    <div class="modal-body">
+                      <form role="form" method="get" action="/idea/tried/mylist/idea6">
+                        <!-- <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Recipient:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div> -->
+                        <div class="form-group">
+                          <label for="reflection" class="col-form-label">How did you feel trying this idea?</label>
+                          <input type="text" class="form-control" placeholder="Write down some cool stories or feelings!" name="reflection"></input>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="property">Would you like to share your reflection to others?</label>
+                          <select class="form-control" name="property" >
+                            <option value="1">Yep!</option>
+                            <option value="2">Nope...</option>
+                          </select>
+                        </div>
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+                          <button type="submit" class="btn btn-primary">Continue</button>
+                        </div>
+
+                      </form>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <!-- I tried it agian button part -->
+              
+
+            </div>
+          </div>
+        </div>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+    
+  
+  
+  <!-- bottom bar -->
+    <div class="icon-bar fixed-bottom">
+    
+    
+      <a href="/Explore" ><i class="fa fa-globe"></i>
+        <!-- <p>Explore</p> -->
+      </a>
+    
+    
+    
+      <a href="/Surprise" ><i class="fa fa-lightbulb"></i>
+        <!-- <p>Surprise</p> -->
+      </a>
+    
+    
+    
+      <a href="/MyList" ><i class="fa fa-file-alt"></i>
+        <!-- <p>MyList</p> -->
+      </a>
+    
+    
+    
+      <a href="/Calendar" ><i class="fa fa-calendar-alt"></i>
+        <!-- <p>Calendar</p> -->
+      </a>
+    
+    
+
+    <footer></footer>
+    </div>
+</div>
+
+
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="/js/mylist.js"></script>
+  <script src="/js/explore.js"></script>
+  <!-- <script src="/js/idea.js"></script>
+  <script src="/js/user.js"></script> -->
+
+</body>
+</html>
+
