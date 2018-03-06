@@ -135,6 +135,7 @@
     {{#each ideas2}}
         {{#ifvalue property desired="public"}}
         {{#ifvalue userTried desired="false"}} 
+        {{#ifvalue myList desired="false"}} 
           <div class="col-sm-6" id="block-trending-{{id}}">
             <div  class="card">
               <div class="card-body">
@@ -166,6 +167,7 @@
             </div>
           </div>
         </div>
+        {{/ifvalue}}
         {{/ifvalue}}
         {{/ifvalue}}
       {{/each}}
