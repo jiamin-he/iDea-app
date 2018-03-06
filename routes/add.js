@@ -124,6 +124,8 @@ exports.quicklyDelete = function(req,res){
   for(i in data.ideas) {
     if(data.ideas[i].id == cur) {
       data.ideas[i].myList = "false";
+      data.ideas[i].userTried = "false";
+      console.log(data.ideas[i]);
       var temp = new Date();
       data.ideas[i].operationTime = temp.toString();
       break;
