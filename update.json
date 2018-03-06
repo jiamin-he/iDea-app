@@ -1243,5 +1243,6 @@
    },
    "cardColor": [
       "purple", "blue", "indigo", "cyan", "lime","brown"
-   ]
+   ],
+   "numsOfIdeas": 0
 }

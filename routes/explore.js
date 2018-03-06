@@ -3,6 +3,11 @@
  * GET home page.
  */
 var data = require('../update.json');
+data.numsOfIdeas = data.ideas.length;
+
+exports.count = function(req, res) {
+  res.json(data.numsOfIdeas);
+}
 
 // the first part of default view is for newest (ideas)
 // the second part is for trending (ideas2)

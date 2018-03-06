@@ -114,6 +114,9 @@ app.post('/add_to_my_list', add.quicklyAdd2);
 // delete ideas from my list tab
 app.post('/delete_from_my_list', add.quicklyDelete);
 
+// get num of ideas 
+app.get('/getNums', explore.count);
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

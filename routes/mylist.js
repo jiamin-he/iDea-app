@@ -4,6 +4,7 @@
  */
 var data = require('../update.json');
 
+
 exports.view = function(req, res){
   data.ideas.sort(function(a,b){
     var dateA = new Date(a.operationTime);

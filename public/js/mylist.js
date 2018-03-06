@@ -26,6 +26,36 @@ $(document).ready(function() {
 	// });
 })
 
+
+
+$(window).on("scroll", function(){
+        var scrollHeight = $(document).height();
+        // var iCurScrollPos = $(window).scrollTop();
+        var scrollPosition = $(window).height() + $(window).scrollTop();
+        if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+            // when scroll to bottom of the page
+            $('#reach_the_end').addClass("show");
+            // console.log($("#reach_the_end"))
+            $("#reach_the_end")[0].style.display = "block";
+            // $("#reach_the_end")[0].aria-hidden = "false";
+     //        if ($("#reach_the_end")[0].style.display == "block") {
+     //        	timer = setTimeout(function(){
+     //        		$('#reach_the_end').removeClass("show");
+					// $("#reach_the_end")[0].style.display = "none";
+     //        	}, 2000)
+     //        }
+        }
+        
+    })
+
+$('.close_end').click(function(){
+	$('#reach_the_end').removeClass("show");
+	$("#reach_the_end")[0].style.display = "none";
+    // $("#reach_the_end")[0].aria-hidden = "true";
+            
+})
+
+
 function initializePage() {
 	// $(".round").click(checked);
 	

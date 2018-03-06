@@ -63,11 +63,35 @@
       {{/each}}
 </div>
 
+    <!-- the end tips window -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="reach_the_end" style="display:none" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Oops...</h5>
+            <button type="button" class="close close_end" data-dismiss="modal" aria-label="Close" >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>You've explored all the amazing ideas!</p>
+          </div>
+          <div class="modal-footer">
+            <a href="/add_new_ideas"><button type="button" class="btn btn-primary" id="explore">Contribute ideas to community</button></a>
+            <button type="button" class="btn btn-secondary close_end" data-dismiss="modal" >Okay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of the end tips window -->
+
+
     <nav class="icon-bar fixed-bottom">
 
     {{#each bottom-bar}}
     
-      <a href="/{{name}}" ><i class="{{class}}"></i>
+      <a href="/{{name}}" >
+        <i class="{{class}}"></i>
         <!-- <p>{{name}}</p> -->
       </a>
     

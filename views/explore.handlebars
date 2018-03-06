@@ -4,7 +4,7 @@
 <head>
 
   <!-- Google Analytics Content Experiment code -->
-  <script>function utmx_section(){}function utmx(){}(function(){var
+  <!-- <script>function utmx_section(){}function utmx(){}(function(){var -->
   k='170860000-4',d=document,l=d.location,c=d.cookie;
   if(l.search.indexOf('utm_expid='+k)>0)return;
   function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
@@ -170,7 +170,32 @@
       {{/each}}
     </div>
     </div>
-  </div>
+
+    </div>
+
+    <!-- the end tips window -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="reach_the_end" style="display:none" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Oops...</h5>
+            <button type="button" class="close close_end" data-dismiss="modal" aria-label="Close" >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>You've explored all the amazing ideas!</p>
+          </div>
+          <div class="modal-footer">
+            <a href="/add_new_ideas"><button type="button" class="btn btn-primary" id="explore">Contribute ideas to community</button></a>
+            <button type="button" class="btn btn-secondary close_end" data-dismiss="modal" >Okay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of the end tips window -->
+
+  
 </div>
 
   <div class="icon-bar fixed-bottom">

@@ -19,12 +19,13 @@ $(document).ready(function() {
 function initializePage() {
     timestamp1 = new Date().getTime();
     console.log(timestamp1);
-    ga('create','UA-93709601-3','auto');
+    // ga('create','UA-93709601-3','auto');
 }
 
     $('#trendingSort').click(function(event){
         timestamp2 = new Date().getTime();
-        // console.log(timestamp2);
+        console.log(timestamp2);
+        ga('create','UA-93709601-3','auto');
         ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
         event.preventDefault();
         window.location ='/explore/trending';
@@ -33,23 +34,21 @@ function initializePage() {
 
     $('#newestSort').click(function(event){
         timestamp2 = new Date().getTime();
-        // console.log(timestamp2);
+        console.log(timestamp2);
+        ga('create','UA-93709601-3','auto');
         ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
         event.preventDefault();
         window.location= '/explore/newest';
         // $.post('/explore', {section: "newest"}, postCallback);
     });
 
-    $('.fixed_bottom').click(function(event) {
+    $(window).on("unload", function(e) {
         timestamp2 = new Date().getTime();
-        if(ga) ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
-    });
-
-
-    $('.top_right_button').click(function(event){
-        timestamp2 = new Date().getTime();
+        // console.log(timestamp2);
+        ga('create','UA-93709601-3','auto');
         ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
-    });
+        // console.log("this will be triggered");
+      });
 
     $('.top_right_button_card').click(function(event){
         
@@ -67,6 +66,7 @@ function initializePage() {
         $(block)[0].style.display = "none";
 
         // for a/b testing
+        ga('create','UA-93709601-3','auto');
         ga('send','event','add_to_my_list','click');
 
     });
@@ -74,4 +74,68 @@ function initializePage() {
 function postCallback(res){
     
   }
+
+var prevTemp = 0;
+
+$(window).on("scroll", function(){
+        var scrollHeight = $(document).height();
+        // var iCurScrollPos = $(window).scrollTop();
+        var scrollPosition = $(window).height() + $(window).scrollTop();
+        var temp = (scrollHeight - scrollPosition) / scrollHeight;
+
+        // reach the end
+        if ( temp === 0) {
+            // when scroll to bottom of the page
+            $('#reach_the_end').addClass("show");
+            // console.log($("#reach_the_end"))
+            $("#reach_the_end")[0].style.display = "block";
+            // $("#reach_the_end")[0].aria-hidden = "false";
+            // if ($("#reach_the_end")[0].style.display == "block") {
+            //     setTimeout(function(){
+            //         $('#reach_the_end').removeClass("show");
+            //         $("#reach_the_end")[0].style.display = "none";
+            //     }, 2000)
+            // }
+
+            // for a/b testing
+            ga('create','UA-93709601-3','auto');
+            ga('send','event','explore_percent','viewAll');
+
+        } 
+
+        if(temp < 0.25 && prevTemp > 0.25) {
+            console.log("<0.25");
+
+            // for a/b testing
+            ga('create','UA-93709601-3','auto');
+            ga('send','event','explore_percent','view0.75');
+
+        }
+
+        if(temp < 0.5 && prevTemp > 0.5) {
+            console.log("<0.5");
+
+            // for a/b testing
+            ga('create','UA-93709601-3','auto');
+            ga('send','event','explore_percent','view0.5');
+        } 
+
+        if(temp < 0.75 && prevTemp > 0.75) {
+            console.log("<0.75");
+
+            // for a/b testing
+            ga('create','UA-93709601-3','auto');
+            ga('send','event','explore_percent','view0.25');
+        }
+        
+        prevTemp = temp;
+    })
+
+$('.close_end').click(function(){
+    $('#reach_the_end').removeClass("show");
+    $("#reach_the_end")[0].style.display = "none";
+    // $("#reach_the_end")[0].aria-hidden = "true";
+            
+})
+
 

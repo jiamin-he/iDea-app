@@ -2,21 +2,31 @@ $(document).ready(function() {
 
   var animating = false;
   var cardsCounter = 0;
-  var numOfCards = 100;
+  var numOfCards = 10;
   var decisionVal = 80;
   var pullDeltaX = 0;
   var deg = 0;
   var $card, $cardReject, $cardLike;
-  var timestamp1, timestamp2;
-  
-  timestamp1 = new Date().getTime();
-  console.log(timestamp1);
+  var numsOfLike = 0;
+
+  // ga('create','UA-93709601-3','auto');
+
 
   // $(function() {
   //     $(".demo_card").each(function() {
   //       var hue = 'rgb(' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ')';
   //           $(this).css("background-color", hue);});
   // });
+
+  // assign numOfCards
+  // jQuery.ajaxSetup({async:false});
+  // $.get('/getNums', function(res){
+  //   // console.log(res);
+  //   numOfCards = res;
+  // })
+  // jQuery.ajaxSetup({async:true});
+
+  // console.log(numOfCards);
 
   function pullChange() {
     animating = true;
@@ -41,9 +51,7 @@ $(document).ready(function() {
       var id = $card.attr('id');
       // console.log(id);
       $.post('add_to_my_list', {id: id}, postCallback);
-
-      ga('create','UA-93709601-3','auto');
-      ga('send','event','add_to_my_list','click');
+      numsOfLike++;
 
     } else if (pullDeltaX <= -decisionVal) {
       $card.addClass("to-left");
@@ -62,6 +70,7 @@ $(document).ready(function() {
           // pop up tips window (have reached the end)
           $('#reach_the_end').addClass("show");
           $("#reach_the_end")[0].style.display = "block";
+
         }
       }, 300);
     }
@@ -79,7 +88,7 @@ $(document).ready(function() {
     }, 300);
   };
 
-  $(document).on("mousedown touchstart", ".demo__card:not(.inactive)", function(e) {
+  $(".demo").on("mousedown touchstart", ".demo__card:not(.inactive)", function(e) {
     if (animating) return;
 
     $card = $(this);
@@ -101,13 +110,30 @@ $(document).ready(function() {
     });
   });
 
+  $('.fixed_bottom').click(function(event) {
+      timestamp2 = new Date().getTime();
+      ga('create','UA-93709601-3','auto');
+      ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
 
-  $(window).on("unload", function(e) {
-    timestamp2 = new Date().getTime();
-    // console.log(timestamp2);
-    ga('create','UA-93709601-3','auto');
-    ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
-    // console.log("this will be triggered");
+      // for a/b testing
+      for(var i = 0; i < numsOfLike; i++){
+        ga('create','UA-93709601-3','auto');
+        ga('send','event','add_to_my_list','click');
+      }
+      
+  });
+
+
+  $('.top_right_button').click(function(event) {
+      timestamp2 = new Date().getTime();
+      ga('create','UA-93709601-3','auto');
+      ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
+
+      // for a/b testing
+      for(var i = 0; i < numsOfLike; i++){
+        ga('create','UA-93709601-3','auto');
+        ga('send','event','add_to_my_list','click');
+      }
   });
 
 });
@@ -119,5 +145,3 @@ $('.close_end').click(function(){
     // $("#reach_the_end")[0].aria-hidden = "true";
             
 })
-
-
