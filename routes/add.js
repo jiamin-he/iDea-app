@@ -11,43 +11,66 @@ exports.addIdeas = function(req, res){
   // console.log(date.valueOf());
   var randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
   var uniqid = randLetter + Date.now();
+  // 0~5
+  var random = Math.floor(Math.random() * 6);
   var newIdea = {
-  	  "name":"lalala",
       "id": uniqid,
       "title" : req.query.title,
-      "tried": req.query.user_tried == 1?"1":"0",
-      "liked":"0",
+      "tried": req.query.user_tried == "true"?"1":"0",
       "description": req.query.description,
-      "imageURL": "",
-      "createTime": date.toString(),
-      "operationTime": date.toString(),
-      "property": req.query.add_to,
-      "userTried": req.query.user_tried,
+      "property": req.query.add_to == "0"?"public":"private",
       "feeling": req.query.category,
-      "date":"",
-      "reflection": "",
-      "eventName": "Adventurous - 1", 
-      "calendar": "Adventurous", 
-      "color": "pink",
-      "myList": "true",
+      "calendarColor": data.calendarColorMatch[(req.query.category)],
+      "color": data.cardColor[random],
+      "myList": req.query.add_to == "1"? "true":"false",
+      "operationTime": date.toString(),
+      "createTime": date.toString(),
       "notes": [],
       "cost": req.query.cost,
       "time": req.query.time,
-      "comments": [{"data": "1519265609445" ,"comment": "good idea!"}]
+      "userTried": req.query.user_tried,
   };
   console.log(newIdea);
   data.ideas.unshift(newIdea);
 
   if(newIdea.property == "public") {
+    data["newestSection"] = {
+      "section": "true",
+      "class": " show active "
+    }
+    data["trendingSection"] = {
+      "section": "false",
+      "class": " "
+    } 
+    
     res.redirect('/explore');
     // res.render("explore",data); 
   }
   else if(newIdea.userTried == "true") {
+    data["toTrySection"] = {
+      "section": "false",
+      "class":  " "
+    }
+    data["triedSection"] = {
+      "section": "true",
+      "class": " show active "
+    }
+
     res.redirect('/mylist');
     // res.render("mylist",data);
     // $("#nav a[href="#tried"]").tab("show"); 
-  } else res.redirect('/mylist'); 
-  // res.render("mylist",data);
+  } else {
+    data["toTrySection"] = {
+      "section": "true",
+      "class": " show active "
+    }
+    data["triedSection"] = {
+      "section": "false",
+      "class": " "
+    } 
+
+    res.redirect('/mylist'); 
+  }
 };
 
 // exports.tried = function(req, res){

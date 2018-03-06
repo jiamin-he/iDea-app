@@ -586,5 +586,15 @@
         "id": "calendar",
         "class": "fa fa-calendar-alt"
       }
-    ]  
+    ],
+   "calendarColorMatch": {
+      "relaxing": "blue",
+      "charitable": "red",
+      "productive": "yellow",
+      "adventurous": "green",
+      "stress-relieving": "orange"
+   },
+   "cardColor": [
+      "purple", "blue", "indigo", "cyan", "lime","brown"
+   ]
 }

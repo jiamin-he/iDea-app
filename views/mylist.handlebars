@@ -76,7 +76,7 @@
           {{#ifvalue myList desired="true"}}
             {{#ifvalue userTried desired="false"}}
         <div class="col-sm-6">
-          <div class="card" id="block-{{id}}">
+          <div class="card myCard" id="block-{{id}}">
             <div class="card-body" id="block-body-{{id}}">
               <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
               <h5 class="card-title capitalize" style="text-align: center;"><a href="/idea/{{id}}">{{title}}</a></h5>
@@ -88,7 +88,13 @@
               <br />
               <br />
               <button href="#" class="btn btn-primary tried" id="tried-{{id}}" data-toggle="modal" data-target="#reflectionModal-{{id}}" style="width: 10em; background-color: #428bca; border-color: #428bca">I tried it !</button></p>
-              <!-- pop up dialog -->
+              
+
+            </div>
+          </div>
+        </div>
+
+        <!-- pop up dialog -->
               <div class="modal fade" id="reflectionModal-{{id}}" tabindex="-1" role="dialog" aria-labelledby="reflectionModalLabel-{{id}}" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -147,14 +153,13 @@
                         </div>
 
                       </form>
-                    </div>
+                    </div>  <!-- end of modal body   -->
                     
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+              <!-- end of pop up diaglog -->
+        
             {{/ifvalue}}
           {{/ifvalue}}
         {{/each}}
@@ -172,7 +177,7 @@
           {{#ifvalue myList desired="true"}}
             {{#ifvalue userTried desired="true"}}
         <div class="col-sm-6">
-          <div class="card" id="card-{{id}}">
+          <div class="card myCard" id="card-{{id}}">
             <div class="card-body">
               <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{feeling}}.png" alt="Card image cap">
               <h5 class="card-title capitalize" style="text-align: center;"> <a href="/idea/{{id}}">{{title}}</a></h5>
@@ -197,7 +202,14 @@
               </div>
               </p>
               
-              <!-- pop up dialog -->
+              
+              
+
+            </div>
+          </div>
+        </div>
+
+        <!-- pop up dialog -->
               <div class="modal fade" id="reflectionModalAgain-{{id}}" tabindex="-1" role="dialog" aria-labelledby="reflectionModalAgainLabel-{{id}}" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -261,11 +273,8 @@
                 </div>
               </div>
               <!-- I tried it again button part -->
-              
 
-            </div>
-          </div>
-        </div>
+
             {{/ifvalue}}
           {{/ifvalue}}
         {{/each}}
@@ -301,8 +310,10 @@
   <!-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  
   <script src="/js/mylist.js"></script>
-  <script src="/js/explore.js"></script>
+  <!-- <script src="/js/explore.js"></script> -->
   <!-- <script src="/js/idea.js"></script>
   <script src="/js/user.js"></script> -->
 

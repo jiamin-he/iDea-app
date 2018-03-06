@@ -4,7 +4,7 @@ $(document).ready(function() {
 	initializePage();
 	
 	$(function() {
-			$(".card").each(function() {
+			$(".myCard").each(function() {
 				var hue = 'rgb(' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ')';
 						$(this).css("background-color", hue);});
 		});
@@ -38,9 +38,10 @@ function postCallback(res){
 
 function initCard() {
 
+
 	var pressTimer;
 
-	$(".card").mouseup(function(){
+	$(".myCard").mouseup(function(){
 		console.log("up");
 	  clearTimeout(pressTimer);
 	  // Clear timeout

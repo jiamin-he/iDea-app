@@ -18,6 +18,7 @@ function initializePage() {
     timestamp1 = new Date().getTime();
     console.log(timestamp1);
     ga('create','UA-93709601-3','auto');
+}
 
     $('#trendingSort').click(function(event){
         timestamp2 = new Date().getTime();
@@ -67,7 +68,6 @@ function initializePage() {
         ga('send','event','add_to_my_list','click');
 
     });
-}
 
 function postCallback(res){
     
