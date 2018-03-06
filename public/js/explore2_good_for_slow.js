@@ -12,14 +12,6 @@ $(document).ready(function() {
   timestamp1 = new Date().getTime();
   console.log(timestamp1);
 
-  // assign numOfCards
-  jQuery.ajaxSetup({async:false});
-  $.get('/getNums', function(res){
-    // console.log(res);
-    numOfCards = res;
-  })
-  jQuery.ajaxSetup({async:true});
-
   // $(function() {
   //     $(".demo_card").each(function() {
   //       var hue = 'rgb(' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ',' + (Math.floor((256 - 199) * Math.random()) + 200) + ')';
@@ -70,10 +62,6 @@ $(document).ready(function() {
           // pop up tips window (have reached the end)
           $('#reach_the_end').addClass("show");
           $("#reach_the_end")[0].style.display = "block";
-
-          // for a/b testing
-          ga('create','UA-93709601-3','auto');
-          ga('send','event','explore_percent','viewAll');
         }
       }, 300);
     }
@@ -89,22 +77,6 @@ $(document).ready(function() {
       pullDeltaX = 0;
       animating = false;
     }, 300);
-
-    if(cardsCounter <= numOfCards*0.75 && (cardsCounter-1) >= numOfCards*0.75) {
-      // for a/b testing
-      ga('create','UA-93709601-3','auto');
-      ga('send','event','explore_percent','view0.25');
-    }
-    if(cardsCounter <= numOfCards*0.5 && (cardsCounter-1) >= numOfCards*0.5) {
-      // for a/b testing
-      ga('create','UA-93709601-3','auto');
-      ga('send','event','explore_percent','view0.5');
-    }
-    if(cardsCounter <= numOfCards*0.25 && (cardsCounter-1) >= numOfCards*0.25) {
-      // for a/b testing
-      ga('create','UA-93709601-3','auto');
-      ga('send','event','explore_percent','view0.75');
-    }
   };
 
   $(document).on("mousedown touchstart", ".demo__card:not(.inactive)", function(e) {
