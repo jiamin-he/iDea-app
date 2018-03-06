@@ -32,7 +32,12 @@ exports.defaultView = function(req, res){
 };
 
 exports.altView = function(req, res){
-  // console.log(data);
+  
+  data.ideas.sort(function(a,b){
+    var dateA = new Date(a.createTime);
+    var dateB = new Date(b.createTime);
+    return dateB.valueOf() - dateA.valueOf();
+  });
   res.render('explore2',data);
 }
 
