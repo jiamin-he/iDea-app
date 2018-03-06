@@ -74,7 +74,7 @@ $(document).ready(function() {
     }, 300);
   };
 
-  $(document).on("mousedown touchstart", ".demo__card:not(.inactive)", function(e) {
+  $(".demo").on("mousedown touchstart", ".demo__card:not(.inactive)", function(e) {
     if (animating) return;
 
     $card = $(this);
