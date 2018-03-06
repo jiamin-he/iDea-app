@@ -39,21 +39,44 @@ function postCallback(res){
 function initCard() {
 
 
-	var pressTimer;
+	var pressTimer1;
 
-	$(".myCard").mouseup(function(){
+	$(".toTryCard").mouseup(function(){
 		console.log("up");
-	  clearTimeout(pressTimer);
+	  clearTimeout(pressTimer1);
 	  // Clear timeout
 	  return false;
 	}).mousedown(function(event){
 		console.log("down");
 	  // Set timeout
-	  pressTimer = window.setTimeout(function() {
+	  pressTimer1 = window.setTimeout(function() {
 	   		var id = event.currentTarget.id.substr('block-'.length);
 			// console.log($("#block-body-"+id)[0].style);
 			// $("#block-"+id).addClass("disappear");
 			$("#block-"+id)[0].style.display = "none";
+			// $("#block-body-"+id)[0].style.display = "none";
+			$.post('delete_from_my_list', {id: id}, postCallback);
+		},500);
+
+	  return false; 
+	});
+
+
+	var pressTimer2;
+
+	$(".triedCard").mouseup(function(){
+		console.log("up");
+	  clearTimeout(pressTimer2);
+	  // Clear timeout
+	  return false;
+	}).mousedown(function(event){
+		console.log("down");
+	  // Set timeout
+	  pressTimer2 = window.setTimeout(function() {
+	   		var id = event.currentTarget.id.substr('card-'.length);
+			// console.log($("#block-body-"+id)[0].style);
+			// $("#block-"+id).addClass("disappear");
+			$("#card-"+id)[0].style.display = "none";
 			// $("#block-body-"+id)[0].style.display = "none";
 			$.post('delete_from_my_list', {id: id}, postCallback);
 		},500);

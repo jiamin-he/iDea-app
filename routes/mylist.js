@@ -50,6 +50,7 @@ exports.tried = function(req, res){
   console.log(object);
   for(i in data.ideas){
   	if(data.ideas[i].id == req.params.triedId) {
+      if(data.ideas[i].myList == "false") data.ideas[i].myList = "true";
   		data.ideas[i].userTried="true";
   		if(!data.ideas[i]["notes"]) data.ideas[i]["notes"] = [];
   		data.ideas[i]["notes"].unshift(object);

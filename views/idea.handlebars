@@ -28,7 +28,56 @@
     <!-- style="text-align: center;" -->
 		
         <div>
-              <!-- pop up dialog -->
+              
+
+<div class="tab-content container" data-spy="scroll">
+    <div class="tab-pane fade show active" id="newest" role="tabpanel" aria-labelledby="newestSort">
+      <br />
+        <div class="card-columns">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card" style="background-color: #82bdf1">
+                  <div class="card-body">
+                  <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{idea.feeling}}.png" alt="Card image cap">
+                  <h5 class="card-title capitalize" style="text-align: center;">{{idea.title}}</a></h5>
+                  
+
+              
+                  <p class="card-text" style="text-align: center;">{{idea.description}}
+                  <br />
+                  <br />
+                  <a href="/surprise_list/feeling/{{idea.feeling}}"><span class="badge badge-primary">{{idea.feeling}}</span></a>
+                  <a href="/surprise_list/time/{{idea.time}}"><span class="badge badge-success">{{idea.time}}</span></a>
+                  <a href="/surprise_list/cost/{{idea.cost}}"><span class="badge badge-warning">{{idea.cost}}</span></a>
+
+
+                  </p>
+
+
+              
+                    <!-- <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p> -->
+                </div>
+                  <div class="card-footer" style="background-color: white;">
+                        <small class="text-muted"><i class="fas fa-check"></i>  {{idea.tried}} people tried this idea.</small>
+
+                        {{#ifvalue idea.userTried desired="false"}}
+
+                        <button href="#" class="btn btn-primary" id="tried-out-{{idea.id}}" data-toggle="modal" data-target="#reflection-tips-{{idea.id}}" >I tried it !</button>
+
+                        {{/ifvalue}}
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <h3 style="text-align: center;">
+      Reflection
+      <!-- add comment/reflection button -->
+              <button href="#" class="btn btn-primary" id="tried-{{idea.id}}" data-toggle="modal" data-target="#reflection-{{idea.id}}" ><i class="fas fa-pencil-alt"></i><!-- Add reflections --></button>
+      </h3>
+
+      {{#ifvalue idea.userTried desired="true"}}
+        <!-- pop up dialog -->
               <div class="modal fade" id="reflection-{{idea.id}}" tabindex="-1" role="dialog" aria-labelledby="reflectionLabel-{{idea.id}}" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -94,44 +143,104 @@
             </div>
           </div>
               <!-- end of pop-up -->
+      {{/ifvalue}}
 
-<div class="tab-content container" data-spy="scroll">
-    <div class="tab-pane fade show active" id="newest" role="tabpanel" aria-labelledby="newestSort">
-      <br />
-        <div class="card-columns">
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="card" style="background-color: #82bdf1">
-                  <div class="card-body">
-                  <img class="card-img-top img-fluid" style="width:4em; display: block;margin-left: auto;margin-right: auto;"  src="/img/{{idea.feeling}}.png" alt="Card image cap">
-                  <h5 class="card-title capitalize" style="text-align: center;">{{idea.title}}</a></h5>
-                  
-
-              
-                  <p class="card-text" style="text-align: center;">{{idea.description}}
-                  <br />
-                  <br />
-                  <a href="/surprise_list/feeling/{{idea.feeling}}"><span class="badge badge-primary">{{idea.feeling}}</span></a>
-                  <a href="/surprise_list/time/{{idea.time}}"><span class="badge badge-success">{{idea.time}}</span></a>
-                  <a href="/surprise_list/cost/{{idea.cost}}"><span class="badge badge-warning">{{idea.cost}}</span></a>
-                  </p>
-
-
-              
-                    <!-- <p class= "bottom-right">Provider:<a href="/user/{{name}}">{{name}}</a></p> -->
-                </div>
-                  <div class="card-footer" style="background-color: white;">
-                        <small class="text-muted"><i class="fas fa-check"></i>  {{idea.tried}} people tried this idea.</small>
-                  </div>
+      {{#ifvalue idea.userTried desired="false"}}
+        <!-- Modal -->
+        <div class="modal fade" id="reflection-{{idea.id}}" tabindex="-1" role="dialog" aria-labelledby="reflectionLabel-{{idea.id}}" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="reflectionLabel-{{idea.id}}">Oops...</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-          </div>
-      </div>
+              <div class="modal-body">
+                You did not try this idea before! Cannot add reflections to it :-(
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-      <h3 style="text-align: center;">
-      Reflection
-      <!-- add comment/reflection button -->
-              <button href="#" class="btn btn-primary" id="tried-{{idea.id}}" data-toggle="modal" data-target="#reflection-{{idea.id}}" ><i class="fas fa-pencil-alt"></i><!-- Add reflections --></button>
-      </h3>
+                <button href="#" class="btn btn-primary" id="tried-{{idea.id}}" data-toggle="modal" data-target="#reflection-tips-{{idea.id}}" >I tried it !</button>
+                <!-- <button type="button" class="btn btn-primary">I tried it !</button> -->
+
+                
+                    
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+              <!-- end of pop-up -->
+
+              <!-- this is when i did not try it and then click i tried it -->
+              <!-- pop up dialog -->
+              <div class="modal fade" id="reflection-tips-{{idea.id}}" tabindex="-1" role="dialog" aria-labelledby="reflectionLabel-tips-{{idea.id}}" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="reflectionLabel-tips-{{idea.id}}">New reflection</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+
+                    <div class="modal-body">
+                      <form role="form" method="get" action="/idea/tried/details/toTry/{{idea.id}}">
+                        <!-- <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Recipient:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div> -->
+                        <div class="form-group">
+                          <label for="reflection" class="col-form-label">How did you feel trying this idea?</label>
+                          <input type="text" class="form-control" placeholder="Write down some cool stories or feelings!" name="reflection"></input>
+                        </div>
+
+                        <!-- <div class="form-group">
+                          <label for="property">Would you like to share your reflection to others?</label>
+                          <select class="form-control" name="property" >
+                            <option value="1">Yep!</option>
+                            <option value="2">Nope...</option>
+                          </select>
+                        </div> -->
+
+                        <fieldset class="form-group">
+                          <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0" style="font-size: 1em;">Would you like to share your reflection to others?</legend>
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="property" id="gridRadios1" value="public" checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                  Yep!
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="property" id="gridRadios2" value="private">
+                                <label class="form-check-label" for="gridRadios2">
+                                  Nope...
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+                          <button type="submit" class="btn btn-primary">Continue</button>
+                        </div>
+
+                      </form>
+                    </div>  <!-- end of form-->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {{/ifvalue}}
 
           {{#each idea.notes}}
             {{#ifvalue property desired="public"}} 

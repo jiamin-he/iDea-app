@@ -3,8 +3,9 @@
 
 var timestamp1, timestamp2;
 
+
 $(document).ready(function() {
-  
+
 	initializePage();
 	$(function() {
 			$(".card").each(function() {
@@ -13,6 +14,7 @@ $(document).ready(function() {
 		});
     
 	})
+
 
 function initializePage() {
     timestamp1 = new Date().getTime();
@@ -40,7 +42,7 @@ function initializePage() {
 
     $('.fixed_bottom').click(function(event) {
         timestamp2 = new Date().getTime();
-        ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
+        if(ga) ga('send', 'timing', 'add to my list', 'load', timestamp2-timestamp1);
     });
 
 
