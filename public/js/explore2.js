@@ -50,6 +50,11 @@ $(document).ready(function() {
       // console.log(id);
       $.post('add_to_my_list', {id: id}, postCallback);
 
+      $('#tips_bar')[0].style.display = "block";
+        setTimeout(function(){
+            $('#tips_bar')[0].style.display = "none";
+        },1000);
+
       ga('create','UA-93709601-3','auto');
       ga('send','event','add_to_my_list','click');
 
