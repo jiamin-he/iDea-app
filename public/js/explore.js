@@ -64,6 +64,11 @@ function initializePage() {
         var block = "#block-" +(isNewest?"newest-":"trending-")  + id;
         // console.log(block);
         $(block)[0].style.display = "none";
+        $('#tips_bar')[0].style.display = "block";
+        setTimeout(function(){
+            $('#tips_bar')[0].style.display = "none";
+        },1000);
+
 
         // for a/b testing
         ga('create','UA-93709601-3','auto');
