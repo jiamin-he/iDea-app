@@ -19,6 +19,7 @@ $(document).ready(function() {
     numOfCards = res;
   })
   jQuery.ajaxSetup({async:true});
+  console.log(numOfCards);
 
   // $(function() {
   //     $(".demo_card").each(function() {
@@ -81,17 +82,20 @@ $(document).ready(function() {
           ga('send','event','explore_percent','viewAll');
         }
 
-        if(cardsCounter <= numOfCards*0.75 && (cardsCounter-1) >= numOfCards*0.75) {
+        if(cardsCounter >= numOfCards*0.75 && (cardsCounter-1) <= numOfCards*0.75) {
+          console.log("0.75");
           // for a/b testing
           ga('create','UA-93709601-3','auto');
           ga('send','event','explore_percent','view0.25');
         }
-        if(cardsCounter <= numOfCards*0.5 && (cardsCounter-1) >= numOfCards*0.5) {
+        if(cardsCounter >= numOfCards*0.5 && (cardsCounter-1) <= numOfCards*0.5) {
+          console.log("0.5");
           // for a/b testing
           ga('create','UA-93709601-3','auto');
           ga('send','event','explore_percent','view0.5');
         }
-        if(cardsCounter <= numOfCards*0.25 && (cardsCounter-1) >= numOfCards*0.25) {
+        if(cardsCounter >= numOfCards*0.25 && (cardsCounter-1) <= numOfCards*0.25) {
+          console.log("0.25");
           // for a/b testing
           ga('create','UA-93709601-3','auto');
           ga('send','event','explore_percent','view0.75');
