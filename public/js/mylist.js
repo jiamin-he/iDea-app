@@ -86,6 +86,12 @@ function initCard() {
 			$("#block-"+id)[0].style.display = "none";
 			// $("#block-body-"+id)[0].style.display = "none";
 			$.post('delete_from_my_list', {id: id}, postCallback);
+
+			$('#tips_bar')[0].style.display = "block";
+		        setTimeout(function(){
+		            $('#tips_bar')[0].style.display = "none";
+		        },1000);
+		        
 		},500);
 
 	  return false; 
@@ -109,6 +115,12 @@ function initCard() {
 			$("#card-"+id)[0].style.display = "none";
 			// $("#block-body-"+id)[0].style.display = "none";
 			$.post('delete_from_my_list', {id: id}, postCallback);
+
+			$('#tips_bar')[0].style.display = "block";
+		        setTimeout(function(){
+		            $('#tips_bar')[0].style.display = "none";
+		        },1000);
+
 		},500);
 
 	  return false; 

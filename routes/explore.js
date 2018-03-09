@@ -36,6 +36,32 @@ exports.defaultView = function(req, res){
   res.render('explore',data);
 };
 
+
+exports.setView1 = function(req, res){
+  data["ideas2"]=data.ideas.slice();
+  data.ideas.sort(function(a,b){
+    var dateA = new Date(a.createTime);
+    var dateB = new Date(b.createTime);
+    return dateB.valueOf() - dateA.valueOf();
+  });
+  data.ideas2.sort(function(a,b){
+    return b.tried - a.tried;
+  });
+
+  // default: toTry active
+  if(!data["newestSection"]) {
+    data["newestSection"] = {
+      "section": "true",
+      "class": " show active "
+    }
+    data["trendingSection"] = {
+      "section": "false",
+      "class": " "
+    } 
+  }
+  res.render('explore',data);
+};
+
 exports.altView = function(req, res){
   
   data.ideas.sort(function(a,b){

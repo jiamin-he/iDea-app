@@ -83,6 +83,9 @@ app.get('/profile', profile.view);
 app.get('/calendar', calendar.view);
 app.get('/mylist', mylist.view);
 
+// to show explore1, not random page from ab testing
+app.get('/explore1', explore.setView1);
+
 // reading calendar data
 app.get('/calendarData', calendar.getData);
 
