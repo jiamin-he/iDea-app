@@ -76,7 +76,7 @@ app.get('/index', explore.defaultView);
 
 // Main Tabs
 app.get('/explore', explore.defaultView);
-app.get('/explore2', explore.altView);
+// app.get('/explore2', explore.altView);
 app.get('/explore/:section', explore.switchView);
 app.get('/surprise', surprise.view);
 app.get('/profile', profile.view);
